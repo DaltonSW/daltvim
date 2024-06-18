@@ -39,18 +39,18 @@ require('lazy').setup({
     },
   },
 
-  require 'dalton.plugins.whichkey',
-  require 'dalton.plugins.theme',
-  require 'dalton.plugins.telescope',
   require 'dalton.plugins.autocomp',
-  require 'dalton.plugins.mini',
   require 'dalton.plugins.autofmt',
-  require 'dalton.plugins.neotree',
-  require 'dalton.plugins.treesitter',
-  require 'dalton.plugins.lsp',
   require 'dalton.plugins.autopairs',
   require 'dalton.plugins.debugging',
   require 'dalton.plugins.indentline',
+  require 'dalton.plugins.lsp',
+  require 'dalton.plugins.mini',
+  require 'dalton.plugins.neotree',
+  require 'dalton.plugins.telescope',
+  require 'dalton.plugins.theme',
+  require 'dalton.plugins.treesitter',
+  require 'dalton.plugins.whichkey',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
