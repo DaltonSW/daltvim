@@ -22,7 +22,7 @@ require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
   'HiPhish/rainbow-delimiters.nvim',
-
+  { 'MaximilianLloyd/ascii.nvim', dependencies = { 'MunifTanjim/nui.nvim' } },
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
@@ -38,7 +38,7 @@ require('lazy').setup({
       },
     },
   },
-
+  require 'dalton.plugins.alpha',
   require 'dalton.plugins.autocomp',
   require 'dalton.plugins.autofmt',
   require 'dalton.plugins.autopairs',
@@ -49,7 +49,9 @@ require('lazy').setup({
   require 'dalton.plugins.neotree',
   require 'dalton.plugins.telescope',
   require 'dalton.plugins.theme',
+  require 'dalton.plugins.toggleterm',
   require 'dalton.plugins.treesitter',
+  require 'dalton.plugins.undotree',
   require 'dalton.plugins.whichkey',
 }, {
   ui = {
