@@ -2,10 +2,19 @@ return { -- Useful plugin to show you pending keybinds.
   'folke/which-key.nvim',
   event = 'VimEnter', -- Sets the loading event to 'VimEnter'
   config = function() -- This is the function that runs, AFTER loading
-    require('which-key').setup()
+    local wk = require 'which-key'
+    wk.setup()
 
+    wk.register {
+      ['leader'] = {
+        a = { '<cmd>Alpha<cr>', '[A]lpha' },
+        m = { '<cmd>Mason<cr>', '[M]ason' },
+        p = { '<cmd>Lazy<cr>', '[P]lugins' },
+        u = { '<cmd>Undotree<cr>', '[U]ndo Tree' },
+      },
+    }
     -- Document existing key chains
-    require('which-key').register {
+    wk.register {
       ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
       ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
       ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
@@ -15,7 +24,7 @@ return { -- Useful plugin to show you pending keybinds.
       ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
     }
     -- visual mode
-    require('which-key').register({
+    wk.register({
       ['<leader>h'] = { 'Git [H]unk' },
     }, { mode = 'v' })
   end,
