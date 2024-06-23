@@ -24,7 +24,6 @@ require('lazy').setup({
   'HiPhish/rainbow-delimiters.nvim',
   { 'MaximilianLloyd/ascii.nvim', dependencies = { 'MunifTanjim/nui.nvim' } },
   -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -49,7 +48,7 @@ require('lazy').setup({
   require 'dalton.plugins.neotree',
   require 'dalton.plugins.telescope',
   require 'dalton.plugins.theme',
-  require 'dalton.plugins.toggleterm',
+  require 'dalton.plugins.todocomments',
   require 'dalton.plugins.treesitter',
   require 'dalton.plugins.undotree',
   require 'dalton.plugins.whichkey',
