@@ -1,23 +1,38 @@
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+local function map(mode, mapping, command, opts)
+  vim.keymap.set(mode, mapping, command, opts)
+end
+
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+map('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlight' })
+map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
--- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
--- is not what someone will guess without a bit more experience.
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+--  Use CTRL+<hjkl> to switch between split windows - See `:help wincmd` for a list of all window commands
+map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
---
---  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+map({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save file' })
+
+-- Move Lines
+map('n', '<A-j>', '<cmd>m .+1<cr>==', { desc = 'Move Down' })
+map('n', '<A-k>', '<cmd>m .-2<cr>==', { desc = 'Move Up' })
+map('i', '<A-j>', '<esc><cmd>m .+1<cr>==gi', { desc = 'Move Down' })
+map('i', '<A-k>', '<esc><cmd>m .-2<cr>==gi', { desc = 'Move Up' })
+map('v', '<A-j>', ":m '>+1<cr>gv=gv", { desc = 'Move Down' })
+map('v', '<A-k>', ":m '<-2<cr>gv=gv", { desc = 'Move Up' })
+
+-- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
+map('n', 'n', "'Nn'[v:searchforward].'zv'", { expr = true, desc = 'Next Search Result' })
+map('x', 'n', "'Nn'[v:searchforward]", { expr = true, desc = 'Next Search Result' })
+map('o', 'n', "'Nn'[v:searchforward]", { expr = true, desc = 'Next Search Result' })
+map('n', 'N', "'nN'[v:searchforward].'zv'", { expr = true, desc = 'Prev Search Result' })
+map('x', 'N', "'nN'[v:searchforward]", { expr = true, desc = 'Prev Search Result' })
+map('o', 'N', "'nN'[v:searchforward]", { expr = true, desc = 'Prev Search Result' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
