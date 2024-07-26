@@ -1,7 +1,7 @@
 return {
   -- TODO:
   -- NOTE:
-  -- BUG:
+  -- FIX:
   -- WARN:
   -- PERF:
   -- TEST:
@@ -10,19 +10,13 @@ return {
   dependencies = { 'nvim-lua/plenary.nvim' },
   opts = {
     signs = true,
-    colors = {
-      error = { 'DiagnosticError', 'ErrorMsg' },
-      warning = { 'DiagnosticWarn' },
-      info = { 'DiagnosticInfo' },
-      hint = { 'Identifier' },
-    },
     keywords = {
-      FIX = { icon = '󰃤 ', color = '#FF5555', alt = { 'BUG', 'ISSUE' } },
+      TODO = { icon = '󰄲 ', color = '#A6FAFD' },
+      NOTE = { icon = '󰎚 ', color = '#ABFF9B', alt = { 'INFO' } },
+      FIX = { icon = '󰃤 ', color = '#FF7878', alt = { 'BUG', 'ISSUE' } },
       WARN = { icon = ' ', color = '#FFB86C', alt = { 'HEY', 'IDEA' } },
-      TODO = { icon = '󰄲 ', color = '#8BE9FD' },
-      NOTE = { icon = '󰎚 ', color = '#FF79C6', alt = { 'INFO' } },
-      PERF = { icon = '󰥔 ', color = '#BD93F9', alt = { 'OPTIMIZE', 'SLOW', 'FAST' } },
-      TEST = { icon = '󰙨 ', color = '', alt = { 'SETUP', 'TEARDOWN' } },
+      PERF = { icon = '󰥔 ', color = '#D6B7F9', alt = { 'OPTIMIZE', 'SLOW', 'FAST' } },
+      TEST = { icon = '󰙨 ', color = '#FFA1DC', alt = { 'SETUP', 'TEARDOWN' } },
     },
   },
 }

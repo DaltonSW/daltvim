@@ -28,7 +28,6 @@ require('lazy').setup({
   require 'dalton.plugins.autocomp',
   require 'dalton.plugins.autofmt',
   require 'dalton.plugins.autopairs',
-  require 'dalton.plugins.codeium',
   require 'dalton.plugins.debugging',
   require 'dalton.plugins.indentline',
   require 'dalton.plugins.lsp',
