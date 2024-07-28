@@ -3,20 +3,23 @@ return {
   -- NOTE:
   -- FIX:
   -- WARN:
-  -- PERF:
   -- TEST:
+  -- DOC:
+  -- IDEA:
+  --
   'folke/todo-comments.nvim',
   event = 'VimEnter',
   dependencies = { 'nvim-lua/plenary.nvim' },
   opts = {
     signs = true,
     keywords = {
-      TODO = { icon = '󰄲 ', color = '#A6FAFD' },
-      NOTE = { icon = '󰎚 ', color = '#ABFF9B', alt = { 'INFO' } },
-      FIX = { icon = '󰃤 ', color = '#FF7878', alt = { 'BUG', 'ISSUE' } },
-      WARN = { icon = ' ', color = '#FFB86C', alt = { 'HEY', 'IDEA' } },
-      PERF = { icon = '󰥔 ', color = '#D6B7F9', alt = { 'OPTIMIZE', 'SLOW', 'FAST' } },
+      TODO = { icon = '󰄲 ', color = '#A3FFE0' },
+      NOTE = { icon = ' ', color = '#D9B3FF', alt = { 'INFO' } },
+      BUG = { icon = '󰃤 ', color = '#FF7878', alt = { 'FIX', 'FIXME', 'ISSUE', 'SLOW' } },
+      WARN = { icon = ' ', color = '#FFB86C', alt = { 'HEY', 'IDEA', 'PERF' } },
       TEST = { icon = '󰙨 ', color = '#FFA1DC', alt = { 'SETUP', 'TEARDOWN' } },
+      DOC = { icon = '󰈙 ', color = '#D1D1D1', alt = { 'DESC', 'PARAM', 'RETURN' } },
+      IDEA = { icon = ' ', color = '#F1FA8C', alt = { 'TRY', 'PSEUDO' } },
     },
   },
 }
