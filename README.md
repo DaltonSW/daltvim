@@ -4,9 +4,6 @@
 
 DaltVim is my own neovim configuration. Obviously, that means it will be catered to my preferences and workflows, but I like to think it could still be useful to other people to peruse.
 
-### Note
-Keymap configuration has been quite the mental block, so those are probably the most lacking part of this. There are lots of defaults from kickstart, and I've tweaked a few others, but they definitely need to be restructured to your preferences.
-
 ## Plugins
 
 | Plugin Name | Purpose |
@@ -34,11 +31,3 @@ Keymap configuration has been quite the mental block, so those are probably the 
 | mini.ai | Gives good around/inside navigation for textobjects (Nothing to do with Artificial Intelligence)|
 | mini.surround | Add/delete/replace things in your surroundings |
 | mini.statusline | Statusline on the bottom of the buffer |
-
-### Alpha
-
-![image](https://github.com/user-attachments/assets/fb4984cd-7d4c-46a4-9e8d-ebdb0453930a)
-
-### To Do Comments
-
-![image](https://github.com/user-attachments/assets/e3a586ad-b532-4015-aa32-e62a8b83bf97)
