@@ -1,20 +1,16 @@
--- Make line numbers default
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.number = true -- Enable line numbers by default
+vim.opt.relativenumber = true -- Use relative line numbers
 
--- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = 'a'
+vim.opt.mouse = 'a' -- Enable the mouse
 
-vim.opt.showmode = false
+vim.opt.showmode = true -- Can be disabled if you get a status bar or something
 
--- Sync clipboard between OS and Neovim.
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = 'unnamedplus' -- Sync OS and Neovim clipboard
 
 -- Enable break indent
 vim.opt.breakindent = true
 
--- Save undo history
-vim.opt.undofile = true
+vim.opt.undofile = true -- Save undo history
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
@@ -48,5 +44,3 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
-
-vim.g.lazyvim_picker = 'telescope'
