@@ -32,6 +32,7 @@ vim.opt.relativenumber = true -- Make line numbers relative
 -- Setup `leader`s before loading lazy
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
+vim.g.have_nerd_font = true
 
 -- Setup lazy.nvim
 require('lazy').setup {
@@ -40,7 +41,7 @@ require('lazy').setup {
     { import = 'plugins' },
   },
   -- Configure any other settings here -- https://lazy.folke.io/configuration
-  install = { colorscheme = { 'habamax' } },
+  install = { colorscheme = { 'catppuccin' } },
   -- automatically check for plugin updates
   checker = { enabled = true },
 }
