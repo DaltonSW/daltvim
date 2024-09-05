@@ -17,9 +17,18 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
+-- Options
+
+vim.opt.number = true -- Show line numbers
+vim.opt.relativenumber = true -- Make line numbers relative
+vim.opt.mouse = 'a' -- Enable mouse mode
+vim.opt.showmode = false -- False since our status bar shows the mode
+vim.opt.clipboard = 'unnamedplus' -- Sync OS and NeoVim clipboards
+vim.opt.undofile = true -- Save undo history
+vim.opt.cursorline = true -- Show line that cursor is on
+vim.opt.scrolloff = 10 -- Minimum number of lines to keep above and below cursor
+
+-- Setup `leader`s before loading lazy
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
@@ -27,11 +36,11 @@ vim.g.maplocalleader = '\\'
 require('lazy').setup {
   spec = {
     -- import your plugins
-    -- { import = 'plugins' },
+    { import = 'plugins' },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { 'tokyo-night' } },
+  install = { colorscheme = { 'habamax' } },
   -- automatically check for plugin updates
   checker = { enabled = true },
 }
