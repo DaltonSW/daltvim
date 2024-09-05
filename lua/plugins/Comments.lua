@@ -21,7 +21,7 @@ return {
         BUG = { icon = '󰃤 ', color = '#FF7878', alt = { 'FIX', 'FIXME', 'ISSUE', 'SLOW' } },
         WARN = { icon = ' ', color = '#FFB86C', alt = { 'HEY', 'IDEA', 'PERF' } },
         TEST = { icon = '󰙨 ', color = '#FFA1DC', alt = { 'SETUP', 'TEARDOWN' } },
-        DOC = { icon = '󰈙 ', color = '#D1D1D1', alt = { 'DESC', 'PARAM', 'RETURN' } },
+        DOC = { icon = '󰈙 ', color = '#D1D1D1', alt = { 'DESC', 'PARAM', 'RETURN' } }, -- TODO: Different color?
         IDEA = { icon = ' ', color = '#F1FA8C', alt = { 'TRY', 'PSEUDO' } },
       },
     },
