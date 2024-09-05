@@ -1,5 +1,5 @@
 return {
-  -- TODO Comments - Colorful keyword comment highlighting
+  -- TODO Comments: Colorful keyword comment highlighting
   {
     -- Examples:
     -- TODO:
@@ -47,5 +47,6 @@ return {
     },
   },
 
-  'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
+  -- Comment: "gc" to comment visual regions/lines
+  'numToStr/Comment.nvim',
 }

@@ -1,4 +1,5 @@
 return {
+  -- Which-Key: Shows a visual helper for available keymaps
   'folke/which-key.nvim',
   opts_extend = { 'spec' },
   opts = {
