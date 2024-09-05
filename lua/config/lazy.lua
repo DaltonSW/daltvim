@@ -19,14 +19,15 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Options
 
-vim.opt.number = true -- Show line numbers
-vim.opt.relativenumber = true -- Make line numbers relative
 vim.opt.mouse = 'a' -- Enable mouse mode
+vim.opt.number = true -- Show line numbers
 vim.opt.showmode = false -- False since our status bar shows the mode
-vim.opt.clipboard = 'unnamedplus' -- Sync OS and NeoVim clipboards
 vim.opt.undofile = true -- Save undo history
-vim.opt.cursorline = true -- Show line that cursor is on
 vim.opt.scrolloff = 10 -- Minimum number of lines to keep above and below cursor
+vim.opt.cursorline = true -- Show line that cursor is on
+
+vim.opt.clipboard = 'unnamedplus' -- Sync OS and NeoVim clipboards
+vim.opt.relativenumber = true -- Make line numbers relative
 
 -- Setup `leader`s before loading lazy
 vim.g.mapleader = ' '
@@ -38,8 +39,7 @@ require('lazy').setup {
     -- import your plugins
     { import = 'plugins' },
   },
-  -- Configure any other settings here. See the documentation for more details.
-  -- colorscheme that will be used when installing plugins.
+  -- Configure any other settings here -- https://lazy.folke.io/configuration
   install = { colorscheme = { 'habamax' } },
   -- automatically check for plugin updates
   checker = { enabled = true },
