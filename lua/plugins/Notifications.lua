@@ -31,6 +31,7 @@ return {
       },
     },
   -- stylua: ignore
+    -- TODO: Maybe strip these out, IDK if I'll ever actually use them
   keys = {
     { "<leader>sn", "", desc = "+noice"},
     { "<S-Enter>", function() require("noice").redirect(vim.fn.getcmdline()) end, mode = "c", desc = "Redirect Cmdline" },
