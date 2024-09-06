@@ -32,8 +32,9 @@ Make Cool Shit & Have Fun
         header = vim.split(logo, '\n'),
         -- stylua: ignore
         center = {
-          { action = "Lazy",                                           desc = " Lazy", icon = "󰒲 ", key = "l" },
-          { action = function() vim.api.nvim_input("<cmd>qa<cr>") end, desc = " Quit", icon = " ", key = "q" },
+          { icon = "󰒲 ", key = "l", desc = " Lazy",  action = "Lazy" },
+	  { icon = " ", key = "m", desc = " Mason", action = "Mason" },
+          { icon = " ", key = "q", desc = " Quit",  action = function() vim.cmd("qa") end },
         },
 
         footer = function()
