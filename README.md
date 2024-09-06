@@ -31,6 +31,7 @@ It's in progress :)
 - [ ] UndoTree
 - [ ] VimFugitive (git stuff)
 - [ ] Trouble
+- [ ] WhichKey
 
 #### Known, But Not Right Away
 
@@ -46,6 +47,7 @@ It's in progress :)
 ### Potential Things
 
 - [ ] Debugging
+- [ ] AI?
 
 ## Keymap Categories
 
@@ -64,7 +66,8 @@ It's in progress :)
 - Installed and customized `dashboard-nvim`
 - Installed `lsp-zero` and `mason`
 - Added Mason to Dashboard
-- TODO Comments got added ahead of schedule cuz I really really like them
+- Installed `todo-comments` ahead of schedule cuz I really missed them
+- Installed `vim-sleuth`, holy shit I didn't realize how nice the auto tab-width detection is
 
 ## Checkpoints
 
@@ -81,5 +84,8 @@ It's in progress :)
 - nvim-cmp
 - nvim-lsp
 - nvim-treesitter
+- todo-comments
+- plenary (dependency)
+- vim-sleuth
 
 Startup time is a very crispy 17.6ms
