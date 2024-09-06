@@ -10,6 +10,13 @@ It's in progress :)
     - nvimtree
     - oil
     - others?
+- Way to jump into config from Dashboard
+
+## Things To Do
+
+- Install Mason things
+- Configure Telescope after installing
+- Link Telescope into Dashboard after installing
 
 ## Plugins
 
@@ -29,6 +36,7 @@ It's in progress :)
 
 - [ ] Noice
 - [ ] Mini
+- [ ] TODO Comments
 
 ### Unknown Things
 
@@ -55,3 +63,4 @@ It's in progress :)
 - Installed `treesitter`
 - Installed and customized `dashboard-nvim`
 - Installed `lsp-zero` and `mason`
+- Added Mason to Dashboard
