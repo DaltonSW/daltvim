@@ -36,7 +36,7 @@ It's in progress :)
 
 - [ ] Noice
 - [ ] Mini
-- [ ] TODO Comments
+- [x] TODO Comments
 
 ### Unknown Things
 
@@ -64,6 +64,7 @@ It's in progress :)
 - Installed and customized `dashboard-nvim`
 - Installed `lsp-zero` and `mason`
 - Added Mason to Dashboard
+- TODO Comments got added ahead of schedule cuz I really really like them
 
 ## Checkpoints
 
