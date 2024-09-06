@@ -64,3 +64,21 @@ It's in progress :)
 - Installed and customized `dashboard-nvim`
 - Installed `lsp-zero` and `mason`
 - Added Mason to Dashboard
+
+## Checkpoints
+
+### As of noon 9/6/24
+
+- Catppuccin
+- cmp-nvim-lsp
+- dashboard-nvim
+- lazy.nvim
+- lsp-zero.nvim
+- LuaSnip
+- mason-lspconfig.nvim
+- mason.nvim
+- nvim-cmp
+- nvim-lsp
+- nvim-treesitter
+
+Startup time is a very crispy 17.6ms

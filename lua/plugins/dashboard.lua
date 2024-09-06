@@ -30,6 +30,9 @@ Make Cool Shit & Have Fun
       },
       config = {
         header = vim.split(logo, '\n'),
+	-- TODO: Neovim config
+	-- TODO: Projects
+	-- TODO: Previous session
         -- stylua: ignore
         center = {
           { icon = "󰒲 ", key = "l", desc = " Lazy",  action = "Lazy" },
