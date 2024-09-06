@@ -8,11 +8,7 @@ require 'dalton.keymaps'
 
 require 'config.lazy' -- Init Lazy.nvim and load plugins. Should be done after setting leader
 
-require('lsp-zero').on_attach(function(client, bufnr)
-  -- see :help lsp-zero-keybindings
-  -- to learn the available actions
-  lsp_zero.default_keymaps({buffer = bufnr})
-end)
+require 'config.after' -- Do config stuff required after plugins are loaded 
 
 vim.cmd.colorscheme 'catppuccin'
 
