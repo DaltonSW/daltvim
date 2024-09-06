@@ -7,7 +7,7 @@ It's in progress :)
 ### Known Things
 
 - [x] Theme
-- [ ] Dashboard
+- [x] Dashboard
 - [x] TreeSitter
 - [ ] Telescope
 - [ ] Formatting
