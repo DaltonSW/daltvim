@@ -5,6 +5,11 @@ It's in progress :)
 ## Problems I've Discovered
 
 - No autocompleting braces/parens
+- No way to interact with terminal inside of Neovim for quick stuff
+- A way to interact with files and folders that isn't netrw
+    - nvimtree
+    - oil
+    - others?
 
 ## Plugins
 
@@ -26,10 +31,12 @@ It's in progress :)
 - [ ] Mini
 
 ### Unknown Things
+
 - [ ] Testing
 - [ ] Status Bar
 
 ### Potential Things
+
 - [ ] Debugging
 
 ## Keymap Categories
