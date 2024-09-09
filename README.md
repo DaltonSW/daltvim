@@ -37,12 +37,13 @@ It's in progress :)
 
 - [ ] Noice
 - [ ] Mini
+    - https://github.com/echasnovski/mini.nvim?tab=readme-ov-file#modules
 - [x] TODO Comments
 
 ### Unknown Things
 
 - [ ] Testing
-- [ ] Status Bar
+- [x] Status Bar (lualine)
 
 ### Potential Things
 

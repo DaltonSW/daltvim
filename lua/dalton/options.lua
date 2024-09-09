@@ -3,7 +3,7 @@ vim.opt.relativenumber = true -- Use relative line numbers
 
 vim.opt.mouse = 'a' -- Enable the mouse
 
-vim.opt.showmode = true -- Can be disabled if you get a status bar or something
+vim.opt.showmode = false -- Can be disabled if you get a status bar or something
 
 vim.opt.clipboard = 'unnamedplus' -- Sync OS and Neovim clipboard
 
