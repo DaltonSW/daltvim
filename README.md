@@ -17,35 +17,36 @@ It's in progress :)
 - Install Mason things
 - Configure Telescope after installing
 - Link Telescope into Dashboard after installing
+- Configure `lualine`. Remove some stuff and see what can be added (like I don't need file encoding type or Tux in my bar)
 
 ## Plugins
 
-### Known Things
+### Installed
 
 - [x] Theme
 - [x] Dashboard
 - [x] TreeSitter
 - [x] LSP (LSP Zero + Mason)
+- [x] TODO Comments
+- [x] Status Bar (lualine)
+- [x] Formatting
+
+### Specific Plugins to Install
+
 - [ ] Telescope
-- [ ] Formatting
 - [ ] UndoTree
 - [ ] VimFugitive (git stuff)
 - [ ] Trouble
 - [ ] WhichKey
-
-#### Known, But Not Right Away
-
 - [ ] Noice
 - [ ] Mini
     - https://github.com/echasnovski/mini.nvim?tab=readme-ov-file#modules
-- [x] TODO Comments
 
-### Unknown Things
+### Known Concepts, No Specific Plugin Known
 
 - [ ] Testing
-- [x] Status Bar (lualine)
 
-### Potential Things
+### Potential Concepts to Investigate
 
 - [ ] Debugging
 - [ ] AI?
@@ -69,6 +70,8 @@ It's in progress :)
 - Added Mason to Dashboard
 - Installed `todo-comments` ahead of schedule cuz I really missed them
 - Installed `vim-sleuth`, holy shit I didn't realize how nice the auto tab-width detection is
+- Installed `lualine` ahead of schedule because I found myself glancing to where the status bar should've been too often
+- Installed `conform`, alongwith `stylua` for Lua, `gofmt` for Go, and `black` for Python
 
 ## Checkpoints
 
