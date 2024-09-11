@@ -37,7 +37,7 @@ It's in progress :)
 - [ ] UndoTree
 - [ ] VimFugitive (git stuff)
 - [ ] Trouble
-- [ ] WhichKey
+- [x] WhichKey
 - [ ] Noice
     - Maybe just get `nvim-notify`, and look for something else for command line customization (if at all)
     - I'm not sure what all `noice` brings, but it might be a bit too much
@@ -73,7 +73,9 @@ It's in progress :)
 - Installed `todo-comments` ahead of schedule cuz I really missed them
 - Installed `vim-sleuth`, holy shit I didn't realize how nice the auto tab-width detection is
 - Installed `lualine` ahead of schedule because I found myself glancing to where the status bar should've been too often
-- Installed `conform`, alongwith `stylua` for Lua, `gofmt` for Go, and `black` for Python
+- Installed `conform`
+- Went through Mason and installed formatters and LSPs for Go, Python, Markdown, and Lua
+- Installed `which-key`
 
 ## Checkpoints
 
