@@ -47,6 +47,7 @@ It's in progress :)
 ### Known Concepts, No Specific Plugin Known
 
 - [ ] Testing
+- [ ] Folding
 
 ### Potential Concepts to Investigate
 
