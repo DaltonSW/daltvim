@@ -39,6 +39,8 @@ It's in progress :)
 - [ ] Trouble
 - [ ] WhichKey
 - [ ] Noice
+    - Maybe just get `nvim-notify`, and look for something else for command line customization (if at all)
+    - I'm not sure what all `noice` brings, but it might be a bit too much
 - [ ] Mini
     - https://github.com/echasnovski/mini.nvim?tab=readme-ov-file#modules
 
