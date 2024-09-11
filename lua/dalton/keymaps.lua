@@ -11,7 +11,7 @@ map('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlight' })
 
 map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- Remove return carriage character 
+-- Remove return carriage character
 -- Mnemonic: Util - Clear Endings
 map('n', '<leader>uce', '<cmd>%s/\r/<CR>', { desc = 'Clear Windows line endings' })
 
