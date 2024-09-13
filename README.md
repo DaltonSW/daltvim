@@ -30,14 +30,14 @@ It's in progress :)
 - [x] TODO Comments
 - [x] Status Bar (lualine)
 - [x] Formatting
+- [x] WhichKey
+- [x] UndoTree
 
 ### Specific Plugins to Install
 
 - [ ] Telescope
-- [ ] UndoTree
 - [ ] VimFugitive (git stuff)
 - [ ] Trouble
-- [x] WhichKey
 - [ ] Noice
     - Maybe just get `nvim-notify`, and look for something else for command line customization (if at all)
     - I'm not sure what all `noice` brings, but it might be a bit too much
@@ -77,6 +77,7 @@ It's in progress :)
 - Installed `conform`
 - Went through Mason and installed formatters and LSPs for Go, Python, Markdown, and Lua
 - Installed `which-key`
+- Installed `undotree`
 
 ## Checkpoints
 
