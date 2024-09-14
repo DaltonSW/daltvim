@@ -2,9 +2,9 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
-require 'dalton.options'
+require 'config.options'
 
-require 'dalton.keymaps'
+require 'config.keymaps'
 
 require 'config.lazy' -- Init Lazy.nvim and load plugins. Should be done after setting leader
 
