@@ -8,7 +8,9 @@ require 'config.keymaps'
 
 require 'config.lazy' -- Init Lazy.nvim and load plugins. Should be done after setting leader
 
-require 'config.after' -- Do config stuff required after plugins are loaded 
+require 'config.after' -- Do config stuff required after plugins are loaded
+
+require 'config.whichkey-groups'
 
 vim.cmd.colorscheme 'catppuccin'
 
