@@ -15,43 +15,51 @@ return {
 ⠀⣿⣿⣿⣿⣿⣿⡟⠸⠿⠿⠿⣿⣿⣿⣿⣿⣿⣿⠿⠋⠀⠀⠀
 ⠀⠘⢿⣿⣿⠿⠋⠀⠀⠀⠀⠀⠀⠉⠉⣿⣿⡏⠁⠀⠀⠀⠀⠀
 ⠀⠀⢸⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀
+]]
 
-Make Cool Shit & Have Fun
-    ]]
-
-    logo = string.rep('\n', 8) .. logo .. '\n\n'
+    local quote = string.rep('\n', 2) .. 'Make Cool Shit & Have Fun'
+    local dateStr = string.rep('\n', 2) .. os.date ' %a, %b %d -- 󰥔 %I:%M:%S %p'
+    local myHeader = string.rep('\n', 8) .. logo .. quote .. dateStr .. string.rep('\n', 2) .. string.rep('~', 20) .. string.rep('\n', 2)
 
     local opts = {
       theme = 'doom',
       hide = {
         -- this is taken care of by lualine
         -- enabling this messes up the actual laststatus setting after loading a file
-        statusline = false,
+        statusline = true,
       },
       config = {
-        header = vim.split(logo, '\n'),
+        header = vim.split(myHeader, '\n'),
+        -- TODO: Add a current date/time string below the header
+
 	-- TODO: Neovim config
+
 	-- TODO: Projects
+
 	-- TODO: Previous session
+        
         -- stylua: ignore
         center = {
-          { icon = "󰒲 ", key = "l", desc = " Lazy",  action = "Lazy" },
-	  { icon = " ", key = "m", desc = " Mason", action = "Mason" },
-          { icon = " ", key = "q", desc = " Quit",  action = function() vim.cmd("qa") end },
+          { key = "c", desc = "  Config",  action = "Telescope find_files cwd=~/.config/nvim" },
+          { key = "f", desc = "  Files",  action = "Neotree reveal float" },
+          { key = "l", desc = "󰒲  Lazy",  action = "Lazy" },
+	  { key = "m", desc = "  Mason", action = "Mason" },
+          -- { key = "p", desc = "?  Projects",  action = "Telescope find_files cwd=~/Projects" },
+          { key = "q", desc = "  Quit",  action = function() vim.cmd("qa") end },
         },
 
         footer = function()
-          local stats = require('lazy').stats()
+          local lazy = require 'lazy'
+
+          local stats = lazy.stats()
           local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-          return { '⚡ Neovim loaded ' .. stats.loaded .. '/' .. stats.count .. ' plugins in ' .. ms .. 'ms' }
+          local plugins = '⚡ Neovim loaded ' .. stats.loaded .. '/' .. stats.count .. ' plugins in ' .. ms .. 'ms'
+
+          local foot = string.rep('\n', 1) .. string.rep('~', 20) .. string.rep('\n', 2) .. plugins
+          return vim.split(foot, '\n')
         end,
       },
     }
-
-    for _, button in ipairs(opts.config.center) do
-      button.desc = button.desc .. string.rep(' ', 30 - #button.desc)
-      button.key_format = '  %s'
-    end
 
     -- Open dashboard after closing lazy
     if vim.o.filetype == 'lazy' then
