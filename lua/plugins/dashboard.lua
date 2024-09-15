@@ -3,7 +3,7 @@ return {
   -- Repo: https://github.com/nvimdev/dashboard-nvim
   'nvimdev/dashboard-nvim',
   lazy = false,
-  keys = { { '<leader>d', '<cmd>Dashboard<cr>', desc = 'Open Dashboard' } },
+  keys = { { '<leader>d', '<cmd>Dashboard<cr>', desc = 'Dashboard' } },
   opts = function()
     local logo = [[
       ⠀⠀⠀⠀⠀⠀⠀⠀⣰⣧⣼⣧⠀⠀⠀⠀⠀⠀
