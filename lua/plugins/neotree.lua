@@ -13,13 +13,36 @@ return {
   },
 
   keys = {
-    { '<leader>nf', '<cmd>Neotree reveal filesystem float<cr>', 'Neotree Files' },
-    { '<leader>ng', '<cmd>Neotree reveal git_status float<cr>', 'Neotree Git' },
-    { '<leader>nc', '<cmd>Neotree close<cr>', 'Neotree Close' },
+    { '<leader>nf', '<cmd>Neotree reveal filesystem float<cr>', desc = 'Neotree Files' },
+    { '<leader>ng', '<cmd>Neotree reveal git_status float<cr>', desc = 'Neotree Git' },
+    { '<leader>nc', '<cmd>Neotree close<cr>', desc = 'Neotree Close' },
   },
 
   opts = {
-    width = 30,
-    hijack_netrw_behavior = 'open_current',
+    popup_border_style = 'rounded',
+
+    filesystem = {
+      hijack_netrw_behavior = 'open_default',
+    },
+
+    window = {
+      position = 'float',
+    },
+
+    default_component_configs = {
+      modified = {
+        symbol = '[~] ',
+        highlight = 'NeoTreeModified',
+      },
+
+      type = {
+        enabled = true,
+        required_width = 80,
+      },
+
+      git_status = {
+        symbols = {},
+      },
+    },
   },
 }

@@ -3,6 +3,7 @@ return {
   -- Repo: https://github.com/nvimdev/dashboard-nvim
   'nvimdev/dashboard-nvim',
   lazy = false,
+  keys = { { '<leader>d', '<cmd>Dashboard<cr>', desc = 'Open Dashboard' } },
   opts = function()
     local logo = [[
       ⠀⠀⠀⠀⠀⠀⠀⠀⣰⣧⣼⣧⠀⠀⠀⠀⠀⠀
@@ -71,6 +72,7 @@ return {
         vim.api.nvim_set_hl(0, 'DashboardDesc', { fg = '#f5e0dc', bg = 'NONE', italic = false })
       end,
     })
+
     -- Open dashboard after closing lazy
     if vim.o.filetype == 'lazy' then
       vim.api.nvim_create_autocmd('WinClosed', {
