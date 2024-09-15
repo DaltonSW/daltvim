@@ -40,11 +40,11 @@ It's in progress :)
 - [x] UndoTree
 - [x] Telescope
 - [x] NeoTree
+- [x] Trouble
 
 ### Specific Plugins to Install
 
 - [ ] VimFugitive (git stuff)
-- [ ] Trouble
 - [ ] Noice
     - Maybe just get `nvim-notify`, and look for something else for command line customization (if at all)
     - I'm not sure what all `noice` brings, but it might be a bit too much
@@ -88,3 +88,4 @@ It's in progress :)
 - Installed `undotree`
 - Installed `telescope`
 - Installed `neo-tree`
+- Installed `trouble`
