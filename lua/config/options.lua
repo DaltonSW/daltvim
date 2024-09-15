@@ -1,3 +1,5 @@
+vim.opt.termguicolors = true -- Ensure 24-bit color is enabled
+
 vim.opt.number = true -- Enable line numbers by default
 vim.opt.relativenumber = true -- Use relative line numbers
 
@@ -44,3 +46,7 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- Disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
