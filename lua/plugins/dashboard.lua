@@ -33,7 +33,7 @@ return {
         -- stylua: ignore
         center = {
           { icon = " ", key = "c", desc = " Config",  action = "Telescope find_files cwd=~/.config/nvim" },
-          { icon = " ", key = "f", desc = " Filetree",  action = "Neotree reveal float" },
+          { icon = " ", key = "f", desc = " Filetree",  action = "Neotree reveal filesystem float" },
           { icon = "󰒲 ", key = "l", desc = " Lazy",  action = "Lazy" },
 	  { icon = " ", key = "m", desc = " Mason", action = "Mason" },
           -- TODO: { icon = "? ", key = "p", desc = " Projects",  action = "Telescope find_files cwd=~/Projects" },
