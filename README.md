@@ -41,13 +41,11 @@ It's in progress :)
 - [x] Telescope
 - [x] NeoTree
 - [x] Trouble
+- [x] Noice
 
 ### Specific Plugins to Install
 
 - [ ] VimFugitive (git stuff)
-- [ ] Noice
-    - Maybe just get `nvim-notify`, and look for something else for command line customization (if at all)
-    - I'm not sure what all `noice` brings, but it might be a bit too much
 - [ ] Mini
     - https://github.com/echasnovski/mini.nvim?tab=readme-ov-file#modules
 
@@ -89,3 +87,4 @@ It's in progress :)
 - Installed `telescope`
 - Installed `neo-tree`
 - Installed `trouble`
+- Installed `noice`
