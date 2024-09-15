@@ -1,5 +1,6 @@
 return {
   -- TODO Comments: Colorful keyword comment highlighting
+  -- Repo: https://github.com/folke/todo-comments.nvim
   {
     -- Examples:
     -- TODO:
@@ -10,7 +11,7 @@ return {
     -- DOC:
     -- IDEA:
 
-    -- TODO: Different colors? 
+    -- TODO: Different colors?
 
     'folke/todo-comments.nvim',
     event = 'VimEnter',
@@ -27,5 +28,5 @@ return {
         IDEA = { icon = ' ', color = '#F1FA8C', alt = { 'TRY', 'PSEUDO' } },
       },
     },
-}
+  },
 }

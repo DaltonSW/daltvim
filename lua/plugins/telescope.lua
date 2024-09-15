@@ -1,4 +1,6 @@
 return {
+  -- Telescope: Fuzzy-finder for many a thing
+  -- https://github.com/nvim-telescope/telescope.nvim
   'nvim-telescope/telescope.nvim',
   tag = '0.1.8',
   dependencies = {

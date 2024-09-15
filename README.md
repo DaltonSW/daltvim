@@ -4,13 +4,19 @@ It's in progress :)
 
 ## Problems I've Discovered
 
+### Pending
+
 - No autocompleting braces/parens
 - No way to interact with terminal inside of Neovim for quick stuff
-- A way to interact with files and folders that isn't netrw
-    - nvimtree
-    - oil
-    - others?
+- Open link under cursor in browser
+
+### Solved
+
 - Way to jump into config from Dashboard
+    - Using Telescope and pointing it to nvim config folder
+- A way to interact with files and folders that isn't netrw
+    - Neotree for full-dir visualizing, and adding/renaming/moving/etc
+    - Telescope for moving quickly between files and searching for them (among other things)
 
 ## Things To Do
 
@@ -32,10 +38,11 @@ It's in progress :)
 - [x] Formatting
 - [x] WhichKey
 - [x] UndoTree
+- [x] Telescope
+- [x] NeoTree
 
 ### Specific Plugins to Install
 
-- [ ] Telescope
 - [ ] VimFugitive (git stuff)
 - [ ] Trouble
 - [ ] Noice
@@ -48,6 +55,7 @@ It's in progress :)
 
 - [ ] Testing
 - [ ] Folding
+- [ ] Jumping to stuff in view
 
 ### Potential Concepts to Investigate
 
@@ -78,24 +86,5 @@ It's in progress :)
 - Went through Mason and installed formatters and LSPs for Go, Python, Markdown, and Lua
 - Installed `which-key`
 - Installed `undotree`
-
-## Checkpoints
-
-### As of noon 9/6/24
-
-- Catppuccin
-- cmp-nvim-lsp
-- dashboard-nvim
-- lazy.nvim
-- lsp-zero.nvim
-- LuaSnip
-- mason-lspconfig.nvim
-- mason.nvim
-- nvim-cmp
-- nvim-lsp
-- nvim-treesitter
-- todo-comments
-- plenary (dependency)
-- vim-sleuth
-
-Startup time is a very crispy 17.6ms
+- Installed `telescope`
+- Installed `neo-tree`
