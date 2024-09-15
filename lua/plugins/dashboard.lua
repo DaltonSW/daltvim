@@ -18,8 +18,7 @@ return {
 ]]
 
     local quote = string.rep('\n', 2) .. 'Make Cool Shit & Have Fun'
-    local dateStr = string.rep('\n', 2) .. os.date ' %a, %b %d -- 󰥔 %I:%M:%S %p'
-    local myHeader = string.rep('\n', 8) .. logo .. quote .. dateStr .. string.rep('\n', 2) .. string.rep('~', 20) .. string.rep('\n', 2)
+    local myHeader = string.rep('\n', 8) .. logo .. quote .. string.rep('\n', 2) .. '┏' .. string.rep('━', 50) .. '┓' .. string.rep('\n', 3)
 
     local opts = {
       theme = 'doom',
@@ -30,22 +29,15 @@ return {
       },
       config = {
         header = vim.split(myHeader, '\n'),
-        -- TODO: Add a current date/time string below the header
 
-	-- TODO: Neovim config
-
-	-- TODO: Projects
-
-	-- TODO: Previous session
-        
         -- stylua: ignore
         center = {
-          { key = "c", desc = "  Config",  action = "Telescope find_files cwd=~/.config/nvim" },
-          { key = "f", desc = "  Files",  action = "Neotree reveal float" },
-          { key = "l", desc = "󰒲  Lazy",  action = "Lazy" },
-	  { key = "m", desc = "  Mason", action = "Mason" },
-          -- { key = "p", desc = "?  Projects",  action = "Telescope find_files cwd=~/Projects" },
-          { key = "q", desc = "  Quit",  action = function() vim.cmd("qa") end },
+          { icon = " ", key = "c", desc = " Config",  action = "Telescope find_files cwd=~/.config/nvim" },
+          { icon = " ", key = "f", desc = " Filetree",  action = "Neotree reveal float" },
+          { icon = "󰒲 ", key = "l", desc = " Lazy",  action = "Lazy" },
+	  { icon = " ", key = "m", desc = " Mason", action = "Mason" },
+          -- TODO: { icon = "? ", key = "p", desc = " Projects",  action = "Telescope find_files cwd=~/Projects" },
+          { icon = " ", key = "q", desc = " Quit",  action = function() vim.cmd("qa") end },
         },
 
         footer = function()
@@ -55,12 +47,29 @@ return {
           local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
           local plugins = '⚡ Neovim loaded ' .. stats.loaded .. '/' .. stats.count .. ' plugins in ' .. ms .. 'ms'
 
-          local foot = string.rep('\n', 1) .. string.rep('~', 20) .. string.rep('\n', 2) .. plugins
+          local dateStr = string.rep('\n', 2) .. os.date " (%a) %b %d, '%y -- 󰥔 %I:%M %p"
+          local foot = string.rep('\n', 2) .. '┗' .. string.rep('━', 50) .. '┛' .. dateStr .. string.rep('\n', 2) .. plugins
           return vim.split(foot, '\n')
         end,
       },
     }
 
+    -- Set spacing between descriptions and keys
+    for _, button in ipairs(opts.config.center) do
+      button.desc = button.desc .. string.rep(' ', 30 - #button.desc)
+      button.key_format = '  %s'
+    end
+
+    vim.api.nvim_create_autocmd('VimEnter', {
+      callback = function()
+        vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = '#89dceb', bg = 'NONE', italic = false })
+        vim.api.nvim_set_hl(0, 'DashboardFooter', { fg = '#fab387', bg = 'NONE', italic = false })
+
+        vim.api.nvim_set_hl(0, 'DashboardKey', { fg = '#f38ba8', bg = 'NONE', italic = false })
+        vim.api.nvim_set_hl(0, 'DashboardIcon', { fg = '#f38ba8', bg = 'NONE', italic = false })
+        vim.api.nvim_set_hl(0, 'DashboardDesc', { fg = '#f5e0dc', bg = 'NONE', italic = false })
+      end,
+    })
     -- Open dashboard after closing lazy
     if vim.o.filetype == 'lazy' then
       vim.api.nvim_create_autocmd('WinClosed', {
