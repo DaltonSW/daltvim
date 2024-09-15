@@ -1,7 +1,9 @@
 return {
   -- Neotree: Tree visualizer. Mostly files, but git trees, diagnostics, etc.
+  -- Repo: https://github.com/nvim-neo-tree/neo-tree.nvim
   -- Default configs: https://github.com/nvim-neo-tree/neo-tree.nvim/blob/main/lua/neo-tree/defaults.lua
   'nvim-neo-tree/neo-tree.nvim',
+  lazy = false,
   branch = 'v3.x',
   dependencies = {
     'nvim-lua/plenary.nvim',

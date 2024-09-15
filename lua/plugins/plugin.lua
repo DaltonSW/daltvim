@@ -1,1 +1,2 @@
+-- Empty plugin
 return {}

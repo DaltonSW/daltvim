@@ -13,7 +13,7 @@ map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- Remove return carriage character
 -- Mnemonic: Util - Clear Endings
-map('n', '<leader>uce', '<cmd>%s/\r/<CR>', { desc = 'Clear Windows line endings' })
+-- map('n', '<leader>uce', '<cmd>%s/\r/<CR>', { desc = 'Clear Windows line endings' })
 
 --  Use CTRL+<hjkl> to switch between split windows - See `:help wincmd` for a list of all window commands
 map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })

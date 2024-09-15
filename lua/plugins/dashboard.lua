@@ -1,5 +1,6 @@
 return {
   -- Dashboard: Startup screen
+  -- Repo: https://github.com/nvimdev/dashboard-nvim
   'nvimdev/dashboard-nvim',
   lazy = false,
   opts = function()

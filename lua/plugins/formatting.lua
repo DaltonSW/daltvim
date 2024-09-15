@@ -1,5 +1,5 @@
 return {
--- Conform: Automatic formatting
+  -- Conform: Automatic formatting
   'stevearc/conform.nvim',
   lazy = false,
   opts = {
