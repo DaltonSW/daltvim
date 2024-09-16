@@ -38,7 +38,7 @@ return {
           { icon = " ", key = "f", desc = " Filetree",  action = "Neotree reveal filesystem float" },
           { icon = "󰒲 ", key = "l", desc = " Lazy",  action = "Lazy" },
 	  { icon = " ", key = "m", desc = " Mason", action = "Mason" },
-          -- TODO: { icon = "? ", key = "p", desc = " Projects",  action = "Telescope find_files cwd=~/Projects" },
+          { icon = "? ", key = "p", desc = " Projects",  action = "Telescope projects" },
           { icon = " ", key = "q", desc = " Quit",  action = function() vim.cmd("qa") end },
         },
 
