@@ -6,7 +6,6 @@ It's in progress :)
 
 ### Pending
 
-- How can I wrap existing text with parents/quotes/etc? (ie "string" -> { "string" } )
 - No way to interact with terminal inside of Neovim for quick stuff
 - Open link under cursor in browser
 
@@ -19,12 +18,11 @@ It's in progress :)
     - Telescope for moving quickly between files and searching for them (among other things)
 - No autocompleting braces/parens
     - mini.pairs
+- How can I wrap existing text with parents/quotes/etc? (ie "string" -> { "string" } )
+    - mini.surround
 
 ## Things To Do
 
-- Install Mason things
-- Configure Telescope after installing
-- Link Telescope into Dashboard after installing
 - Configure `lualine`. Remove some stuff and see what can be added (like I don't need file encoding type or Tux in my bar)
 
 ## Plugins
