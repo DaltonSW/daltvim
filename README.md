@@ -6,7 +6,7 @@ It's in progress :)
 
 ### Pending
 
-- No autocompleting braces/parens
+- How can I wrap existing text with parents/quotes/etc? (ie "string" -> { "string" } )
 - No way to interact with terminal inside of Neovim for quick stuff
 - Open link under cursor in browser
 
@@ -17,6 +17,8 @@ It's in progress :)
 - A way to interact with files and folders that isn't netrw
     - Neotree for full-dir visualizing, and adding/renaming/moving/etc
     - Telescope for moving quickly between files and searching for them (among other things)
+- No autocompleting braces/parens
+    - mini.pairs
 
 ## Things To Do
 
