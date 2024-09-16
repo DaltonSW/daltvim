@@ -29,4 +29,27 @@ return {
       },
     },
   },
+
+  {
+    'numToStr/Comment.nvim',
+    opts = {
+      -- LHS of toggle mappings in N and V mode
+      toggler = {
+        line = '<leader>cl',
+        block = '<leader>cb',
+      },
+
+      -- LHS of operator-pending maps in N and V mode
+      opleader = {
+        line = 'cl',
+        block = 'cb',
+      },
+
+      extra = {
+        above = '<leader>cO',
+        below = '<leader>co',
+        eol = '<leader>ce',
+      },
+    },
+  },
 }
