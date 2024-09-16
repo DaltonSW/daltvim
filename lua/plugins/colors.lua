@@ -10,7 +10,7 @@ return {
     lazy = false,
     cmd = 'HighlightColors',
     config = function()
-      require('nvim-highlight-colors').setup {}
+      require('nvim-highlight-colors').setup {} -- Not sure why, but this explicit setup is required
     end,
   },
 }

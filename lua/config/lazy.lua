@@ -24,9 +24,17 @@ require('lazy').setup {
   },
   -- Configure any other settings here. See the documentation for more details.
   -- https://lazy.folke.io/configuration
+
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { 'catppuccin' } },
+
   -- automatically check for plugin updates
   checker = { enabled = true, notify = true },
   change_detection = { notify = false },
+
+  -- add border to lazy popup
+  ui = {
+    border = 'rounded',
+    title = 'Lazy Plugin Manager',
+  },
 }
