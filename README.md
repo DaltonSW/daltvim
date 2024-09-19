@@ -1,6 +1,6 @@
 # DaltVim 2.0
 
-!["DaltVim Dashboard"](./assets/dashboard.jpg")
+!["DaltVim Dashboard"](./assets/dashboard.jpg)
 
 ## Plugins Installed
 
