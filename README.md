@@ -1,4 +1,4 @@
-# DaltVim 2.0
+# DaltVim
 
 !["DaltVim Dashboard"](./assets/dashboard.jpg)
 
@@ -35,12 +35,12 @@ There are more available, but I've gone with the following:
 
 | Plugin | Description |
 | - | - |
-| mini.animate | Smoother scrolling and cursor movement |
-| mini.icons | ASCII and glyph icons for other plugins to make use of |
-| mini.jump | Enables better jumping forward and backward |
-| mini.move | Allows you to move lines and selections around without cutting |
-| mini.pairs | Automatic pairing for quotes, brackets, etc. |
-| mini.surround | Lets you surround selections with quotes, brackets, etc. |
+| `mini.animate` | Smoother scrolling and cursor movement |
+| `mini.icons` | ASCII and glyph icons for other plugins to make use of |
+| `mini.jump` | Enables better jumping forward and backward |
+| `mini.move` | Allows you to move lines and selections around without cutting |
+| `mini.pairs` | Automatic pairing for quotes, brackets, etc. |
+| `mini.surround` | Lets you surround selections with quotes, brackets, etc. |
 
 ## Problems I've Discovered
 
@@ -54,20 +54,20 @@ There are more available, but I've gone with the following:
 ### Solved
 
 - Way to jump into config from Dashboard
-    - Using Telescope and pointing it to nvim config folder
+    - Using `Telescope` and pointing it to nvim config folder
 - A way to interact with files and folders that isn't netrw
-    - Neotree for full-dir visualizing, and adding/renaming/moving/etc
-    - Telescope for moving quickly between files and searching for them (among other things)
+    - `Neotree` for full-dir visualizing, and adding/renaming/moving/etc
+    - `Telescope` for moving quickly between files and searching for them (among other things)
 - No autocompleting braces/parens
-    - mini.pairs
+    - `mini.pairs`
 - How can I wrap existing text with parents/quotes/etc? (ie "string" -> { "string" } )
-    - mini.surround
+    - `mini.surround`
 
 ## Things To Do
 
 ### General Considerations
 
-- Consider replacing Neotree with mini.files, it looks like it's a beat cleaner for what I want
+- Consider replacing Neotree with mini.files + fugitive, it looks like it's a bit cleaner for what I want
 
 ### Configuration of Installed Plugins
 
@@ -79,5 +79,5 @@ There are more available, but I've gone with the following:
 - [ ] Folding
 - [ ] Jumping to stuff in view
 - [ ] Debugging
-- [ ] AI?
+- [ ] AI...?
 
