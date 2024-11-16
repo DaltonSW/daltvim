@@ -29,6 +29,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- servers you have installed in your system
 require('lspconfig').gopls.setup {}
 require('lspconfig').rust_analyzer.setup {}
+require('lspconfig').csharp_ls.setup {}
 
 ---
 -- Autocompletion setup
