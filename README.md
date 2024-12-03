@@ -22,6 +22,7 @@
 | Render Markdown | Makes markdown super pretty when viewing it inside of nvim |
 | Telescope | Fuzzy-finding for many a thing (files, projects, symbols, errors, etc.) |
 | TODO Comments | Colors various keywords in comments to call stuff out |
+| ToggleTerm | Lets you float a terminal for quick stuff without messing with tabs and buffers |
 | Treesitter | Incremental-parsing library used for analysis and tooling |
 | Trouble | Better tracking of issues, suggestions, etc. Like ToDo Comments but for LSP warnings |
 | Undo Tree | Tree-like undo history, allowing for jumping around and branching your edits |
@@ -46,8 +47,6 @@ There are more available, but I've gone with the following:
 
 ### Pending
 
-- No way to interact with terminal inside of Neovim for quick stuff
-    - A plugin like `toggleterm` looks neat, but I feel like I should look into understanding tabs/buffers more first to see if I actually need it? Not sure what the difference would be between that plugin and just a hotkey to jump between different tabs(?)
 - Open link under cursor in browser
     - I tried `url-open` but it was unable to launch URLs inside of WSL properly for me
 
