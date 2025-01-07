@@ -26,7 +26,9 @@ return {
     lazy = false,
     cmd = 'HighlightColors',
     config = function()
-      require('nvim-highlight-colors').setup {} -- Not sure why, but this explicit setup is required
+      require('nvim-highlight-colors').setup {
+        enable_short_hex = false,
+      }
     end,
   },
 }

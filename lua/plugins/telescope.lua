@@ -11,8 +11,8 @@ return {
     require('telescope').setup {}
     local builtin = require 'telescope.builtin'
 
-    vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find Files' })
-    vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = 'Find Git' })
+    vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Float File Finder' })
+    -- vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = 'Find Git' })
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Find Help' })
     vim.keymap.set('n', '<leader>fr', builtin.registers, { desc = 'Find Registers' })
 

@@ -3,6 +3,7 @@ return {
   version = '*',
   config = true,
   keys = {
-    { '<leader>tf', '<cmd>ToggleTerm direction=float<cr>', desc = 'Term Float' },
+    { '<leader>ft', '<cmd>ToggleTerm direction=float<cr>', desc = 'Float Term' },
+    { '<leader>fg', '<cmd>TermExec direction=float cmd="lazygit"<cr>', desc = 'Float Git' },
   },
 }
