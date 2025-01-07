@@ -50,3 +50,7 @@ cmp.setup {
 }
 
 require('mason').setup()
+
+require('notify').setup {
+  background_colour = '#000000',
+}
