@@ -69,3 +69,17 @@ parser_config.vhs = {
   },
   filetype = 'tape', -- if filetype does not match the parser name
 }
+-- Go HTML Template file autocmd
+---
+vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile', 'BufWritePost' }, {
+  pattern = '*.html',
+  callback = function()
+    local ft = vim.fn.expand '%:e'
+    local pos = vim.fn.search '{{'
+    if ft == 'html' and pos ~= 0 then
+      vim.bo.filetype = 'gohtmltmpl'
+    else
+      vim.bo.filetype = 'html'
+    end
+  end,
+})
