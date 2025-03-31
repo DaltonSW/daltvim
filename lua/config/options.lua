@@ -3,7 +3,7 @@ vim.opt.termguicolors = true -- Ensure 24-bit color is enabled
 vim.opt.number = true -- Enable line numbers by default
 vim.opt.relativenumber = true -- Use relative line numbers
 
-vim.opt.mouse = 'a' -- Enable the mouse
+-- vim.opt.mouse = 'a' -- Enable the mouse
 
 vim.opt.showmode = false -- Can be disabled if you get a status bar or something
 
@@ -30,7 +30,7 @@ vim.opt.timeoutlen = 300
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
-vim.opt.splitbelow = true
+-- vim.opt.splitbelow = true
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
