@@ -25,11 +25,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
--- These are just examples. Replace them with the language
--- servers you have installed in your system
-require('lspconfig').gopls.setup {}
-require('lspconfig').csharp_ls.setup {}
-
 ---
 -- Autocompletion setup
 ---
@@ -48,7 +43,19 @@ cmp.setup {
   mapping = cmp.mapping.preset.insert {},
 }
 
+---
+-- LSP Language Setup
+---
+
 require('mason').setup()
+require('mason-lspconfig').setup {
+  ensure_installed = { 'cssls', 'gopls', 'html', 'jsonls', 'lua_ls', 'omnisharp', 'pyright', 'somesass_ls', 'ts_ls', 'yamlls' },
+  handlers = {
+    function(server_name)
+      require('lspconfig')[server_name].setup {}
+    end,
+  },
+}
 
 require('notify').setup {
   background_colour = '#000000',
