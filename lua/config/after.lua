@@ -26,6 +26,20 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 ---
+-- LSP Language Setup
+---
+
+require('mason').setup()
+require('mason-lspconfig').setup {
+  -- ensure_installed = { 'cssls', 'gopls', 'html', 'jsonls', 'lua_ls', 'pyright', 'somesass_ls', 'ts_ls', 'yamlls' },
+  automatic_enable = true,
+}
+
+require('notify').setup {
+  background_colour = '#000000',
+}
+
+---
 -- Autocompletion setup
 ---
 local cmp = require 'cmp'
@@ -41,24 +55,6 @@ cmp.setup {
     end,
   },
   mapping = cmp.mapping.preset.insert {},
-}
-
----
--- LSP Language Setup
----
-
-require('mason').setup()
-require('mason-lspconfig').setup {
-  ensure_installed = { 'cssls', 'gopls', 'html', 'jsonls', 'lua_ls', 'pyright', 'somesass_ls', 'ts_ls', 'yamlls' },
-  handlers = {
-    function(server_name)
-      require('lspconfig')[server_name].setup {}
-    end,
-  },
-}
-
-require('notify').setup {
-  background_colour = '#000000',
 }
 
 ---
