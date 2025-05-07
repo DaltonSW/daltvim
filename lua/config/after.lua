@@ -49,7 +49,7 @@ cmp.setup {
 
 require('mason').setup()
 require('mason-lspconfig').setup {
-  ensure_installed = { 'cssls', 'gopls', 'html', 'jsonls', 'lua_ls', 'omnisharp', 'pyright', 'somesass_ls', 'ts_ls', 'yamlls' },
+  ensure_installed = { 'cssls', 'gopls', 'html', 'jsonls', 'lua_ls', 'pyright', 'somesass_ls', 'ts_ls', 'yamlls' },
   handlers = {
     function(server_name)
       require('lspconfig')[server_name].setup {}
