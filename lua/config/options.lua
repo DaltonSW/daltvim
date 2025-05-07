@@ -7,7 +7,7 @@ vim.opt.relativenumber = true -- Use relative line numbers
 
 vim.opt.showmode = false -- Can be disabled if you get a status bar or something
 
-vim.opt.clipboard ='unnamedplus' -- Sync OS and Neovim clipboard
+vim.opt.clipboard = 'unnamedplus' -- Sync OS and Neovim clipboard
 
 -- Enable break indent
 vim.opt.breakindent = true
