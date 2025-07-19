@@ -37,7 +37,7 @@ return {
           { icon = " ", key = "c", desc = " Config",  action = "Telescope find_files cwd=~/.config/nvim" },
           { icon = " ", key = "f", desc = " Filetree",  action = "Neotree reveal filesystem float" },
           { icon = "󰒲 ", key = "l", desc = " Lazy",  action = "Lazy" },
-	  { icon = " ", key = "m", desc = " Mason", action = "Mason" },
+	        { icon = " ", key = "m", desc = " Mason", action = "Mason" },
           { icon = " ", key = "q", desc = " Quit",  action = function() vim.cmd("qa") end },
         },
 

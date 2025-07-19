@@ -1,18 +1,33 @@
 return {
   -- Go
+  -- {
+  --   'ray-x/go.nvim',
+  --   dependencies = { -- optional packages
+  --     'ray-x/guihua.lua',
+  --     'neovim/nvim-lspconfig',
+  --     'nvim-treesitter/nvim-treesitter',
+  --   },
+  --   config = function()
+  --     require('go').setup()
+  --   end,
+  --   event = { 'CmdlineEnter' },
+  --   ft = { 'go', 'gomod' },
+  --   build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
+  -- },
   {
-    'ray-x/go.nvim',
+    'crispgm/nvim-go',
     dependencies = { -- optional packages
-      'ray-x/guihua.lua',
+      'nvim-lua/plenary.nvim',
+      -- 'rcarriga/nvim-notify',
       'neovim/nvim-lspconfig',
-      'nvim-treesitter/nvim-treesitter',
     },
     config = function()
-      require('go').setup()
+      require('go').setup({
+        notify = true,
+        auto_lint = false,
+      })
+      require('lspconfig').gopls.setup({})
     end,
-    event = { 'CmdlineEnter' },
-    ft = { 'go', 'gomod' },
-    -- build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
   },
 
   -- TypeScript
