@@ -20,6 +20,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
     vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
     vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+    vim.keymap.set('n', 'grn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
     vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
     vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
   end,
@@ -31,13 +32,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 require('mason').setup()
 require('mason-lspconfig').setup {
-  ensure_installed = { 'cssls', 'gopls', 'html', 'jsonls', 'lua_ls', 'pyright', 'somesass_ls', 'ts_ls', 'yamlls' },
+  ensure_installed = { 'bashls', 'cssls', 'gopls', 'html', 'jsonls', 'lua_ls', 'pyright', 'somesass_ls', 'ts_ls', 'yamlls' },
   automatic_enable = true,
 }
 
-require('notify').setup {
-  background_colour = '#000000',
-}
+
+--   background_colour = '#000000',
+-- }
 
 ---
 -- Autocompletion setup

@@ -8,14 +8,30 @@ return {
   },
 
   config = function()
-    require('telescope').setup {}
+    require('telescope').setup {
+      pickers = {
+        spell_suggest = {
+          layout_strategy = "cursor",
+          layout_config = {
+              width = 0.33,
+              height = 15,
+          }
+        }
+      }
+    }
     local builtin = require 'telescope.builtin'
+    local wk = require 'which-key'
 
-    vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Float File Finder' })
-    -- vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = 'Find Git' })
-    vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Find Help' })
-    vim.keymap.set('n', '<leader>fr', builtin.registers, { desc = 'Find Registers' })
+    wk.add({
+      {
+        mode = { "n" },
 
-    vim.keymap.set('n', '<C-f>', builtin.current_buffer_fuzzy_find, { desc = 'Find In Buffer' })
+          { "<leader>f", group = "Find" },
+          { "<leader>ff", builtin.find_files, desc = "Find Files in CWD" },
+          { "<leader>fb", builtin.current_buffer_fuzzy_find, desc = "Find in Buffer" },
+          { "<leader>fr", builtin.registers, desc = "Find in Registers" },
+          { "<leader>fs", builtin.spell_suggest, desc = "Find Spell Suggestions" }
+      }
+    })
   end,
 }
