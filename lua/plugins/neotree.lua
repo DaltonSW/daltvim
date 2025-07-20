@@ -13,8 +13,8 @@ return {
   },
 
   keys = {
-    { '<leader>nf', '<cmd>Neotree reveal filesystem float<cr>', desc = 'Neotree Files' },
-    { '<leader>ng', '<cmd>Neotree reveal git_status float<cr>', desc = 'Neotree Git' },
+    { '<leader>nf', '<cmd>Neotree reveal filesystem<cr>', desc = 'Neotree Files' },
+    { '<leader>ns', '<cmd>Neotree reveal document_symbols<cr>', desc = 'Neotree Symbols' },
     { '<leader>nc', '<cmd>Neotree close<cr>', desc = 'Neotree Close' },
   },
 
@@ -26,7 +26,7 @@ return {
     },
 
     window = {
-      position = 'float',
+      position = 'left',
     },
 
     default_component_configs = {
@@ -41,8 +41,17 @@ return {
       },
 
       git_status = {
-        symbols = {},
+        symbols = {
+
+        },
       },
+    },
+
+    sources = {
+        "filesystem",
+        "buffers",
+        "git_status",
+        "document_symbols"
     },
   },
 }
