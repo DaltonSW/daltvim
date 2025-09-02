@@ -1,6 +1,6 @@
 return {
   -- TODO Comments: Colorful keyword comment highlighting
-  -- Repo: https://github.com/folke/todo-comments.nvim
+  -- REPO: https://github.com/folke/todo-comments.nvim
   {
     -- Examples:
     -- TODO:
@@ -9,7 +9,6 @@ return {
     -- WARN:
     -- TEST:
     -- DOC:
-    -- IDEA:
 
     -- TODO: Different colors?
 
@@ -19,13 +18,13 @@ return {
     opts = {
       signs = true,
       keywords = {
-        TODO = { icon = '󰄲 ', color = '#A3FFE0' },
+        TODO = { icon = '󰄲 ', color = '#06d6a0', alt = { 'TASK' } },
         NOTE = { icon = ' ', color = '#D9B3FF', alt = { 'INFO' } },
-        BUG = { icon = '󰃤 ', color = '#FF7878', alt = { 'FIX', 'FIXME', 'ISSUE', 'SLOW' } },
-        WARN = { icon = ' ', color = '#FFB86C', alt = { 'HEY', 'IDEA', 'PERF' } },
+        BUG = { icon = '󰃤 ', color = '#FF5A5F', alt = { 'FIX', 'FIXME', 'ISSUE', 'SLOW' } },
+        WARN = { icon = ' ', color = '#FFB86C', alt = { 'HEY', 'HACK', 'PERF' } },
         TEST = { icon = '󰙨 ', color = '#FFA1DC', alt = { 'SETUP', 'TEARDOWN' } },
         DOC = { icon = '󰈙 ', color = '#D1D1D1', alt = { 'DESC', 'PARAM', 'RETURN' } },
-        IDEA = { icon = ' ', color = '#F1FA8C', alt = { 'TRY', 'PSEUDO' } },
+        REPO = { icon = '󰳏', color = '#FFE66D', alt = { 'Repo' } },
       },
     },
   },

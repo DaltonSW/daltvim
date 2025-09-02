@@ -1,9 +1,9 @@
 -- All of this is directly from lspzero's website
-local lspconfig = require 'lspconfig'
+-- local lspconfig = require 'lspconfig'
 
 -- Add cmp_nvim_lsp capabilities settings to lspconfig
-lspconfig.util.default_config.capabilities =
-  vim.tbl_deep_extend('force', lspconfig.util.default_config.capabilities, require('cmp_nvim_lsp').default_capabilities())
+-- lspconfig.util.default_config.capabilities =
+--   vim.tbl_deep_extend('force', lspconfig.util.default_config.capabilities, require('cmp_nvim_lsp').default_capabilities())
 
 -- Executes the callback function every time a
 -- language server is attached to a buffer.
@@ -26,19 +26,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
----
--- LSP Language Setup
----
-
-require('mason').setup()
-require('mason-lspconfig').setup {
-  ensure_installed = { 'bashls', 'cssls', 'gopls', 'html', 'jsonls', 'lua_ls', 'pyright', 'somesass_ls', 'ts_ls', 'yamlls' },
-  automatic_enable = true,
+vim.diagnostic.config {
+  virtual_text = true,
 }
 
-
---   background_colour = '#000000',
--- }
+require('notify').setup {
+  background_colour = '#000000',
+}
 
 ---
 -- Autocompletion setup
@@ -88,3 +82,7 @@ vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile', 'BufWritePost' }, {
     end
   end,
 })
+
+vim.diagnostic.config {
+  virtual_text = true,
+}

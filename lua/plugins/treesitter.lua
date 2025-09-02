@@ -3,8 +3,8 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     version = false,
+    branch = 'master',
     build = ':TSUpdate',
-    event = 'VeryLazy',
     lazy = vim.fn.argc(-1) == 0, -- load treesitter early when opening a file from the cmdline
     cmd = { 'TSUpdateSync', 'TSUpdate', 'TSInstall' },
 
@@ -37,6 +37,7 @@ return {
         'toml',
         'tsx',
         'typescript',
+        'vim',
         'vimdoc',
         'xml',
         'yaml',
