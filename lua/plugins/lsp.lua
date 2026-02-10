@@ -4,7 +4,9 @@ return {
   {
     'mason-org/mason-lspconfig.nvim',
     dependencies = { 'neovim/nvim-lspconfig' },
-    opts = {},
+    opts = {
+      ensure_installed = { 'lua_ls', 'gopls', 'ts_ls', 'pyright' },
+    },
   },
 
   { 'nvim-cmp' },

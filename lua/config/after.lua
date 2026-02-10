@@ -1,27 +1,22 @@
--- All of this is directly from lspzero's website
--- local lspconfig = require 'lspconfig'
-
--- Add cmp_nvim_lsp capabilities settings to lspconfig
--- lspconfig.util.default_config.capabilities =
---   vim.tbl_deep_extend('force', lspconfig.util.default_config.capabilities, require('cmp_nvim_lsp').default_capabilities())
-
 -- Executes the callback function every time a
 -- language server is attached to a buffer.
+-- NOTE: Neovim 0.11 provides native LSP mappings for:
+--   K (hover), grn (rename), grr (references), gra (code action),
+--   gri (implementation), gO (document symbols)
+-- Only non-default bindings are set here.
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function(event)
     local opts = { buffer = event.buf }
 
-    vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
     vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
     vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-    vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
     vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-    vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
     vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
     vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-    vim.keymap.set('n', 'grn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-    vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+    vim.keymap.set({ 'n', 'x' }, '<F3>', function()
+      vim.lsp.buf.format { async = true }
+    end, opts)
     vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
   end,
 })
@@ -45,7 +40,6 @@ cmp.setup {
   },
   snippet = {
     expand = function(args)
-      -- You need Neovim v0.10 to use vim.snippet
       vim.snippet.expand(args.body)
     end,
   },
@@ -58,14 +52,13 @@ cmp.setup {
 local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
 parser_config.vhs = {
   install_info = {
-    url = 'https://github.com/charmbracelet/tree-sitter-vhs', -- local path or git repo
-    files = { 'src/parser.c' }, -- note that some parsers also require src/scanner.c or src/scanner.cc
-    -- optional entries:
-    branch = 'main', -- default branch in case of git repo if different from master
-    generate_requires_npm = false, -- if stand-alone parser without npm dependencies
-    requires_generate_from_grammar = false, -- if folder contains pre-generated src/parser.c
+    url = 'https://github.com/charmbracelet/tree-sitter-vhs',
+    files = { 'src/parser.c' },
+    branch = 'main',
+    generate_requires_npm = false,
+    requires_generate_from_grammar = false,
   },
-  filetype = 'tape', -- if filetype does not match the parser name
+  filetype = 'tape',
 }
 
 -- Go HTML Template file autocmd
@@ -82,7 +75,3 @@ vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile', 'BufWritePost' }, {
     end
   end,
 })
-
-vim.diagnostic.config {
-  virtual_text = true,
-}
