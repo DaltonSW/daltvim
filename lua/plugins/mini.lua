@@ -5,7 +5,7 @@ return {
 
   config = function()
     -- Animate: Add some visual smoothness to common navigations
-    require('mini.animate').setup { cursor = { enable = false } }
+    -- require('mini.animate').setup { cursor = { enable = false } }
 
     -- Files: File display in a series of floating windows
     -- require ('mini.files').setup()
@@ -17,7 +17,7 @@ return {
     require('mini.jump').setup()
 
     -- Jump2D: Allows for jumping anywhere in the view
-    -- require ('mini.jump2d').setup()
+    require('mini.jump2d').setup()
 
     -- Move: Allows for easier moving of lines around
     require('mini.move').setup {
