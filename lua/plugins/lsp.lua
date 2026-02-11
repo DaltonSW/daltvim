@@ -1,6 +1,8 @@
 return {
+  -- Mason: Package manager for LSPs, DAP servers, linters, and formatters
   { 'mason-org/mason.nvim', opts = {} },
 
+  -- Mason-LSPConfig: Handles auto-installing certain LSPs
   {
     'mason-org/mason-lspconfig.nvim',
     dependencies = { 'neovim/nvim-lspconfig' },
@@ -9,6 +11,6 @@ return {
     },
   },
 
+  -- nvim-cmp: Completion engine
   { 'nvim-cmp' },
-  { 'cmp-nvim-lsp' },
 }

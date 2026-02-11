@@ -1,12 +1,9 @@
 return {
   -- Mini: Collection of standalone plugins under the "Mini" umbrella
-  'echasnovski/mini.nvim',
+  'nvim-mini/mini.nvim',
   version = false, -- Always use the rolling releases rather than only the stable versions
 
   config = function()
-    -- Animate: Add some visual smoothness to common navigations
-    -- require('mini.animate').setup { cursor = { enable = false } }
-
     -- Files: File display in a series of floating windows
     -- require ('mini.files').setup()
 
@@ -16,7 +13,7 @@ return {
     -- Jump: Better f/t jumping, repeat with ;
     require('mini.jump').setup()
 
-    -- Jump2D: Allows for jumping anywhere in the view
+    -- Jump2D: Allows for jumping anywhere in the view. Default keymap is <CR> (Enter/Return)
     require('mini.jump2d').setup()
 
     -- Move: Allows for easier moving of lines around
@@ -42,7 +39,7 @@ return {
     -- Pairs: Autopairing for parentheses, quotes, etc
     require('mini.pairs').setup()
 
-    -- Surround
+    -- Surround: Adds actions like "sa" for "surround add"
     require('mini.surround').setup()
 
     -- Trailspace

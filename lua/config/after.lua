@@ -21,12 +21,23 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+-- Disable `unknown global 'vim'` error across all of the config
+vim.lsp.config("lua_ls", {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" } }
+    }
+  }
+})
+
 vim.diagnostic.config {
   virtual_text = true,
 }
 
 require('notify').setup {
   background_colour = '#000000',
+  merge_duplicates = true,
 }
 
 ---

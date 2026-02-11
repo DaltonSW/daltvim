@@ -17,9 +17,7 @@ return {
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        go = { 'gofmt' },
-        python = { 'black' },
-        html = { 'prettier' },
+        go = { 'goimports' },
       },
     },
   },
