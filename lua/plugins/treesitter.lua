@@ -25,7 +25,10 @@ return {
       ensure_installed = {
         'bash',
         'diff',
+        'gdscript',
+        'gdshader',
         'go',
+        'godot_resource',
         'html',
         'json',
         'lua',
