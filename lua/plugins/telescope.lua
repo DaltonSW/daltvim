@@ -1,3 +1,11 @@
+---
+-- Telescope: Fuzzy finder for files, buffers, registers, and more
+--
+-- Plugins:
+--   Telescope (nvim-telescope/telescope.nvim) - Extensible fuzzy finder
+--
+-- Keymaps: <leader>ff files, <leader>fb buffer, <leader>fr registers, <leader>fs spell
+---
 return {
   -- Telescope: Fuzzy-finder for many a thing
   -- https://github.com/nvim-telescope/telescope.nvim
@@ -26,7 +34,6 @@ return {
       {
         mode = { "n" },
 
-          { "<leader>f", group = "Find" },
           { "<leader>ff", builtin.find_files, desc = "Find Files in CWD" },
           { "<leader>fb", builtin.current_buffer_fuzzy_find, desc = "Find in Buffer" },
           { "<leader>fr", builtin.registers, desc = "Find in Registers" },

@@ -1,3 +1,9 @@
+---
+-- Statusline: Bottom status bar configuration
+--
+-- Plugins:
+--   Lualine (nvim-lualine/lualine.nvim) - Configurable statusline with Catppuccin theme
+---
 return {
   -- Lualine: Configurable, fast status line
   'nvim-lualine/lualine.nvim',

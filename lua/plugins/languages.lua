@@ -1,3 +1,9 @@
+---
+-- Languages: Language-specific rendering and tooling
+--
+-- Plugins:
+--   Render Markdown (MeanderingProgrammer/render-markdown.nvim) - Pretty inline markdown rendering
+---
 return {
   -- Markdown
   {

@@ -1,3 +1,11 @@
+---
+-- Undotree: Visual tree-based undo history
+--
+-- Plugins:
+--   Undotree (jiaoshijie/undotree) - Tree-style undo history browser
+--
+-- Keymaps: <leader>u toggle
+---
 return {
   -- Undotree: Tree-like undo history
   'jiaoshijie/undotree',

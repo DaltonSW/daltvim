@@ -1,3 +1,10 @@
+---
+-- Colors: Theme and color rendering
+--
+-- Plugins:
+--   Catppuccin (catppuccin/nvim) - Pastel color theme with plugin integrations
+--   Highlight Colors (brenoprata10/nvim-highlight-colors) - Renders color values inline
+---
 return {
   -- Catppuccin: Pastel theme
   -- Repo: https://github.com/catppuccin/nvim

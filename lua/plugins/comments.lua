@@ -1,3 +1,9 @@
+---
+-- Comments: Keyword highlighting in code comments
+--
+-- Plugins:
+--   TODO Comments (folke/todo-comments.nvim) - Highlights TODO, NOTE, BUG, WARN, etc.
+---
 return {
   -- TODO Comments: Colorful keyword comment highlighting
   -- REPO: https://github.com/folke/todo-comments.nvim

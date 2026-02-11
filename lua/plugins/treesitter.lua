@@ -1,3 +1,12 @@
+---
+-- Treesitter: Incremental parsing for syntax highlighting, indentation, and text objects
+--
+-- Plugins:
+--   Treesitter (nvim-treesitter/nvim-treesitter) - Code parsing and highlighting engine
+--
+-- Keymaps: <C-Space> increment selection, <BS> decrement, ]f/[f functions, ]c/[c classes
+-- See also: config/after.lua for VHS custom parser config
+---
 return {
   -- Treesitter: Highlight, edit, and navigate code
   {

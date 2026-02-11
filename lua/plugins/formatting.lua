@@ -1,3 +1,10 @@
+---
+-- Formatting: Code formatting and tag management
+--
+-- Plugins:
+--   Conform (stevearc/conform.nvim) - Format-on-save with per-language formatters
+--   nvim-ts-autotag (windwp/nvim-ts-autotag) - Auto-close and rename paired HTML/JSX tags
+---
 return {
   {
     -- Conform: Automatic formatting

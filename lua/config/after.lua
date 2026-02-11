@@ -21,7 +21,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
--- Disable `unknown global 'vim'` error across all of the config
+-- lua_ls configuration via Neovim 0.11+ native API
+-- This merges with Mason-LSPConfig's setup; vim.lsp.config is additive.
 vim.lsp.config('lua_ls', {
   settings = {
     Lua = {
@@ -87,7 +88,15 @@ cmp.setup {
       vim.snippet.expand(args.body)
     end,
   },
-  mapping = cmp.mapping.preset.insert {},
+  mapping = cmp.mapping.preset.insert {
+    ['<C-n>'] = cmp.mapping.select_next_item(),
+    ['<C-p>'] = cmp.mapping.select_prev_item(),
+    ['<C-y>'] = cmp.mapping.confirm { select = true },
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-d>'] = cmp.mapping.scroll_docs(4),
+  },
 }
 
 ---

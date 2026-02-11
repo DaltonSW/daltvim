@@ -1,3 +1,13 @@
+---
+-- Noice: Modern UI for messages, command line, and popupmenu
+--
+-- Plugins:
+--   Noice (folke/noice.nvim) - Replaces messages, cmdline, and popupmenu
+--   nvim-notify (rcarriga/nvim-notify) - Notification backend (dependency)
+--   nui.nvim (MunifTanjim/nui.nvim) - UI component library (dependency)
+--
+-- See also: config/after.lua for nvim-notify setup
+---
 return {
   -- Noice: Replaces messages, cmdline, and popup menu
   -- Repo: https://github.com/folke/noice.nvim

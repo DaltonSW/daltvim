@@ -1,3 +1,11 @@
+---
+-- Trouble: Pretty diagnostic, quickfix, and location list viewer
+--
+-- Plugins:
+--   Trouble (folke/trouble.nvim) - Enhanced list viewer for diagnostics and more
+--
+-- Keymaps: <leader>xx diagnostics, <leader>xl location list, <leader>xq quickfix
+---
 return {
   'folke/trouble.nvim',
   opts = {}, -- for default options, refer to the configuration section for custom setup.

@@ -1,7 +1,13 @@
+---
+-- Neo-tree: Tree-based browser for files, git status, and document symbols
+--
+-- Plugins:
+--   Neo-tree (nvim-neo-tree/neo-tree.nvim) - Tree file/git/symbol browser
+--
+-- Keymaps: <leader>nc close, <leader>nf files, <leader>ng git, <leader>ns symbols
+-- Defaults: https://github.com/nvim-neo-tree/neo-tree.nvim/blob/main/lua/neo-tree/defaults.lua
+---
 return {
-  -- Neotree: Tree visualizer. Files, symbols, git, diagnostics, etc.
-  -- Repo: https://github.com/nvim-neo-tree/neo-tree.nvim
-  -- Default configs: https://github.com/nvim-neo-tree/neo-tree.nvim/blob/main/lua/neo-tree/defaults.lua
   'nvim-neo-tree/neo-tree.nvim',
   lazy = false,
   branch = 'v3.x',
@@ -42,9 +48,7 @@ return {
         required_width = 60,
       },
 
-      git_status = {
-        symbols = {},
-      },
+      git_status = {},
     },
 
     sources = {

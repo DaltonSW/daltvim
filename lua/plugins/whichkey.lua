@@ -1,3 +1,12 @@
+---
+-- Which Key: Keymap discovery and visualization
+--
+-- Plugins:
+--   Which Key (folke/which-key.nvim) - Shows available keybindings as you type
+--
+-- Keymaps: <leader>? show local buffer keymaps
+-- See also: config/whichkey-groups.lua for leader group registrations
+---
 return {
   -- Which-Key: Show keymappings based on your current chords
   'folke/which-key.nvim',

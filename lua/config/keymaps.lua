@@ -9,8 +9,8 @@ end
 vim.opt.hlsearch = true
 map('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlight' })
 
-map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
-map('t', '<Esc><Esc>', '<cmd>ToggleTerm<cr>', { desc = 'Exit terminal mode' })
+map('t', '<Esc><Esc>', '<cmd>ToggleTerm<cr>', { desc = 'Toggle terminal' })
+map('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- Remove return carriage character
 -- Mnemonic: Util - Clear Endings

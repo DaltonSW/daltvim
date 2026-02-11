@@ -1,3 +1,9 @@
+---
+-- Dashboard: Startup screen with shortcuts to common actions
+--
+-- Plugins:
+--   Dashboard (nvimdev/dashboard-nvim) - Configurable startup screen
+---
 return {
   -- Dashboard: Startup screen
   -- Repo: https://github.com/nvimdev/dashboard-nvim

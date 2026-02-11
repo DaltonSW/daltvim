@@ -1,12 +1,20 @@
+---
+-- Mini: Collection of small standalone plugins
+--
+-- Modules enabled:
+--   mini.icons - Glyph/icon provider for other plugins
+--   mini.jump - Enhanced f/t motions with ; repeat
+--   mini.jump2d - Jump to any visible location (default: <CR>)
+--   mini.move - Move lines/selections with <C-M-hjkl>
+--   mini.pairs - Auto-pair brackets, quotes, parentheses
+--   mini.surround - Add/delete/replace surrounding pairs (sa, sd, sr)
+---
 return {
   -- Mini: Collection of standalone plugins under the "Mini" umbrella
   'nvim-mini/mini.nvim',
   version = false, -- Always use the rolling releases rather than only the stable versions
 
   config = function()
-    -- Files: File display in a series of floating windows
-    -- require ('mini.files').setup()
-
     -- Icons: Glyphs and icons for other plugins to take advantage of
     require('mini.icons').setup()
 
@@ -33,17 +41,10 @@ return {
       },
     }
 
-    -- Operators
-    -- require ('mini.operators').setup()
-
     -- Pairs: Autopairing for parentheses, quotes, etc
     require('mini.pairs').setup()
 
     -- Surround: Adds actions like "sa" for "surround add"
     require('mini.surround').setup()
-
-    -- Trailspace
-    -- NOTE: If enabled, disable highlighting and enable hotkeys for trimming
-    -- require('mini.trailspace').setup()
   end,
 }
