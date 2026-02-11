@@ -37,8 +37,8 @@ vim.lsp.config('lua_ls', {
 ---
 
 -- Configure and enable gdscript LSP
-vim.lsp.config('gd', {})
-vim.lsp.enable 'gd'
+vim.lsp.config('gdscript', {})
+vim.lsp.enable 'gdscript'
 
 -- paths to check for project.godot file
 local paths_to_check = { '/', '/../', '/../../' }
@@ -55,11 +55,11 @@ for _, value in pairs(paths_to_check) do
   end
 end
 
--- check if server is already running in godot project path
-local is_server_running = vim.uv.fs_stat(godot_project_path .. '/server.pipe')
+-- check if server is already running
+local is_server_running = vim.uv.fs_stat('/tmp/godot.pipe')
 -- start server, if not already running
 if is_godot_project and not is_server_running then
-  vim.fn.serverstart(godot_project_path .. '/server.pipe')
+  vim.fn.serverstart('/tmp/godot.pipe')
 end
 
 --- End Godot Stuff
