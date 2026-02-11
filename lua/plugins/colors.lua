@@ -3,7 +3,6 @@
 --
 -- Plugins:
 --   Catppuccin (catppuccin/nvim) - Pastel color theme with plugin integrations
---   Highlight Colors (brenoprata10/nvim-highlight-colors) - Renders color values inline
 ---
 return {
   -- Catppuccin: Pastel theme
@@ -24,18 +23,5 @@ return {
         which_key = true,
       },
     },
-  },
-
-  -- Highlight Colors: Adds colors to hex codes, HSL codes, CSS variables, etc
-  -- Repo: https://github.com/brenoprata10/nvim-highlight-colors
-  {
-    'brenoprata10/nvim-highlight-colors',
-    lazy = false,
-    cmd = 'HighlightColors',
-    config = function()
-      require('nvim-highlight-colors').setup {
-        enable_short_hex = false,
-      }
-    end,
   },
 }
