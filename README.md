@@ -10,8 +10,6 @@
 | [Conform](https://github.com/stevearc/conform.nvim) | Automatic formatting on save, with per-language formatter configuration | `plugins/formatting.lua` |
 | [Dashboard](https://github.com/nvimdev/dashboard-nvim) | Startup screen with shortcuts to common actions | `plugins/dashboard.lua` |
 | [Floating Help](https://github.com/nil70n/floating-help) | Opens `:help` windows as floating popups instead of splits | `plugins/float-help.lua` |
-| [Highlight Colors](https://github.com/brenoprata10/nvim-highlight-colors) | Renders hex codes, HSL, and CSS color values with their actual color | `plugins/colors.lua` |
-| [Lualine](https://github.com/nvim-lualine/lualine.nvim) | Configurable statusline with Catppuccin theme integration | `plugins/statusline.lua` |
 | [Mason](https://github.com/mason-org/mason.nvim) | Package manager for LSP servers, formatters, linters, and DAP servers | `plugins/lsp.lua` |
 | [Mason-LSPConfig](https://github.com/mason-org/mason-lspconfig.nvim) | Bridges Mason and nvim-lspconfig for automatic LSP server setup | `plugins/lsp.lua` |
 | [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim) | Tree-based browser for files, git status, and document symbols | `plugins/neotree.lua` |
@@ -20,7 +18,6 @@
 | [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) | Automatically close and rename paired HTML/JSX tags | `plugins/formatting.lua` |
 | [Render Markdown](https://github.com/MeanderingProgrammer/render-markdown.nvim) | Pretty inline rendering of markdown with headers, lists, and code blocks | `plugins/languages.lua` |
 | [Telescope](https://github.com/nvim-telescope/telescope.nvim) | Fuzzy finder for files, buffers, registers, spell suggestions, and more | `plugins/telescope.lua` |
-| [TODO Comments](https://github.com/folke/todo-comments.nvim) | Highlights keywords like TODO, NOTE, BUG, WARN in comments | `plugins/comments.lua` |
 | [ToggleTerm](https://github.com/akinsho/toggleterm.nvim) | Floating terminal and lazygit integration | `plugins/toggleterm.lua` |
 | [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | Incremental parsing for syntax highlighting, indentation, and text objects | `plugins/treesitter.lua` |
 | [Trouble](https://github.com/folke/trouble.nvim) | Pretty list viewer for diagnostics, quickfix, and location lists | `plugins/trouble.lua` |
@@ -34,11 +31,13 @@
 
 | Module | Description |
 | - | - |
-| `mini.icons` | Glyph and icon provider used by other plugins (Neo-tree, Lualine, etc.) |
+| `mini.hipatterns` | Highlight patterns like TODO keywords and inline hex colors |
+| `mini.icons` | Glyph and icon provider used by other plugins (Neo-tree, etc.) |
 | `mini.jump` | Enhanced `f`/`t` motions with repeat via `;` |
 | `mini.jump2d` | Jump to any visible location on screen (default keymap: `<CR>`) |
 | `mini.move` | Move lines or selections directionally without cut/paste (`<C-M-hjkl>`) |
 | `mini.pairs` | Auto-pairing for brackets, quotes, and parentheses |
+| `mini.statusline` | Lightweight statusline |
 | `mini.surround` | Add, delete, or replace surrounding pairs (e.g. `sa`, `sd`, `sr`) |
 
 ## Keymaps
@@ -138,8 +137,7 @@ Custom LSP keymaps (set in `config/after.lua`):
 │   │   ├── after.lua            # Post-plugin setup (LSP keymaps, CMP, Godot, etc.)
 │   │   └── whichkey-groups.lua  # Which-key leader group registrations
 │   └── plugins/
-│       ├── colors.lua           # Catppuccin theme + Highlight Colors
-│       ├── comments.lua         # TODO Comments keyword highlighting
+│       ├── colors.lua           # Catppuccin theme
 │       ├── dashboard.lua        # Startup dashboard screen
 │       ├── editor.lua           # Vim Sleuth (auto-detect indentation)
 │       ├── float-help.lua       # Floating help windows
@@ -149,7 +147,6 @@ Custom LSP keymaps (set in `config/after.lua`):
 │       ├── mini.lua             # mini.nvim modules
 │       ├── neotree.lua          # Neo-tree file browser
 │       ├── noice.lua            # Noice UI + nvim-notify
-│       ├── statusline.lua       # Lualine statusline
 │       ├── telescope.lua        # Telescope fuzzy finder
 │       ├── toggleterm.lua       # ToggleTerm floating terminal
 │       ├── treesitter.lua       # Treesitter syntax parsing
@@ -188,7 +185,7 @@ Custom LSP keymaps (set in `config/after.lua`):
 
 ### Configuration of Installed Plugins
 
-- Configure `lualine`. Remove some stuff and see what can be added (like I don't need file encoding type or Tux in my bar)
+- Configure `mini.statusline` sections if needed
 
 ### Concepts To Investigate Without Installed Plugins
 
