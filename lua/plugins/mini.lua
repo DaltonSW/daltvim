@@ -8,6 +8,7 @@
 --   mini.jump2d - Jump to any visible location (default: <CR>)
 --   mini.move - Move lines/selections with <C-M-hjkl>
 --   mini.pairs - Auto-pair brackets, quotes, parentheses
+--   mini.statusline - Lightweight statusline
 --   mini.surround - Add/delete/replace surrounding pairs (sa, sd, sr)
 ---
 return {
@@ -36,7 +37,7 @@ return {
           repo = { pattern = '%f[%w]()REPO()%f[%W]', group = 'MiniHipatternsHack' },
 
           -- Here's a hex color #00CC00 and maybe even another here #B4D455
-          hex_color = require('mini.hipatterns').gen_highlighter.hex_color({ style = "line" }),
+          hex_color = require('mini.hipatterns').gen_highlighter.hex_color(),
         }
       }
     )
@@ -69,6 +70,9 @@ return {
 
     -- Pairs: Autopairing for parentheses, quotes, etc
     require('mini.pairs').setup()
+
+    -- Statusline: Lightweight statusline (replaces lualine)
+    require('mini.statusline').setup()
 
     -- Surround: Adds actions like "sa" for "surround add"
     require('mini.surround').setup()
