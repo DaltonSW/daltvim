@@ -12,13 +12,14 @@ return {
     name = 'catppuccin',
     priority = 1000,
     opts = {
+      compile = true,
+      compile_path = vim.fn.stdpath('cache') .. '/catppuccin',
       transparent_background = true,
       integrations = {
         neotree = true,
         noice = true,
-        neotest = true,
         mason = true,
-        octo = true,
+        mini = true,
         lsp_trouble = true,
         which_key = true,
       },

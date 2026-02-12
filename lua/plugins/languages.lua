@@ -12,6 +12,7 @@ return {
       'nvim-treesitter/nvim-treesitter',
       'mini-nvim/mini.nvim',
     },
+    ft = '.md',
     opts = {},
   },
 }
