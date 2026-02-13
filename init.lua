@@ -12,6 +12,8 @@ require 'config.after' -- Do config stuff required after plugins are loaded
 
 require 'config.whichkey-groups'
 
+require 'config.godot' -- LSP setup and pipe connections for Godot External Editor
+
 vim.cmd.colorscheme 'catppuccin'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
