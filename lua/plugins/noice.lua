@@ -5,23 +5,21 @@
 --   Noice (folke/noice.nvim) - Replaces messages, cmdline, and popupmenu
 --   nvim-notify (rcarriga/nvim-notify) - Notification backend (dependency)
 --   nui.nvim (MunifTanjim/nui.nvim) - UI component library (dependency)
---
--- See also: config/after.lua for nvim-notify setup
 ---
 return {
   -- Noice: Replaces messages, cmdline, and popup menu
   -- Repo: https://github.com/folke/noice.nvim
   'folke/noice.nvim',
   event = 'VeryLazy',
-  opts = {
-    -- add any options here
-  },
+  opts = {},
   dependencies = {
-    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
     'MunifTanjim/nui.nvim',
-    -- OPTIONAL:
-    --   `nvim-notify` is only needed, if you want to use the notification view.
-    --   If not available, we use `mini` as the fallback
-    'rcarriga/nvim-notify',
+    {
+      'rcarriga/nvim-notify',
+      opts = {
+        background_colour = '#000000',
+        merge_duplicates = true,
+      },
+    },
   },
 }

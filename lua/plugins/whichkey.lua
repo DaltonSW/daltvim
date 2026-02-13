@@ -5,7 +5,6 @@
 --   Which Key (folke/which-key.nvim) - Shows available keybindings as you type
 --
 -- Keymaps: <leader>? show local buffer keymaps
--- See also: config/whichkey-groups.lua for leader group registrations
 ---
 return {
   -- Which-Key: Show keymappings based on your current chords
@@ -13,6 +12,13 @@ return {
   event = 'VeryLazy',
   opts = {
     preset = 'helix',
+    spec = {
+      { '<leader>f', group = 'Find' },
+      { '<leader>n', group = 'Neotree' },
+      { '<leader>s', group = 'Search' },
+      { '<leader>u', group = 'Utilities' },
+      { '<leader>x', group = 'Trouble' },
+    },
   },
   keys = {
     {

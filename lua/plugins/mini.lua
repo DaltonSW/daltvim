@@ -18,32 +18,33 @@ return {
 
   config = function()
     -- Hipatterns: Highlight TODO-style keywords and inline hex colors
-    require('mini.hipatterns').setup(
-      {
-        highlighters = {
-          todo = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
-          task = { pattern = '%f[%w]()TASK()%f[%W]', group = 'MiniHipatternsTodo' },
-          note = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
-          info = { pattern = '%f[%w]()INFO()%f[%W]', group = 'MiniHipatternsNote' },
-          bug = { pattern = '%f[%w]()BUG()%f[%W]', group = 'MiniHipatternsFixme' },
-          fix = { pattern = '%f[%w]()FIX()%f[%W]', group = 'MiniHipatternsFixme' },
-          fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
-          issue = { pattern = '%f[%w]()ISSUE()%f[%W]', group = 'MiniHipatternsFixme' },
-          warn = { pattern = '%f[%w]()WARN()%f[%W]', group = 'MiniHipatternsHack' },
-          hack = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
-          perf = { pattern = '%f[%w]()PERF()%f[%W]', group = 'MiniHipatternsHack' },
-          test = { pattern = '%f[%w]()TEST()%f[%W]', group = 'MiniHipatternsNote' },
-          doc = { pattern = '%f[%w]()DOC()%f[%W]', group = 'MiniHipatternsNote' },
-          repo = { pattern = '%f[%w]()REPO()%f[%W]', group = 'MiniHipatternsHack' },
+    require('mini.hipatterns').setup {
+      highlighters = {
+        todo = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
+        task = { pattern = '%f[%w]()TASK()%f[%W]', group = 'MiniHipatternsTodo' },
+        note = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
+        info = { pattern = '%f[%w]()INFO()%f[%W]', group = 'MiniHipatternsNote' },
+        bug = { pattern = '%f[%w]()BUG()%f[%W]', group = 'MiniHipatternsFixme' },
+        fix = { pattern = '%f[%w]()FIX()%f[%W]', group = 'MiniHipatternsFixme' },
+        fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
+        issue = { pattern = '%f[%w]()ISSUE()%f[%W]', group = 'MiniHipatternsFixme' },
+        warn = { pattern = '%f[%w]()WARN()%f[%W]', group = 'MiniHipatternsHack' },
+        hack = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
+        perf = { pattern = '%f[%w]()PERF()%f[%W]', group = 'MiniHipatternsHack' },
+        test = { pattern = '%f[%w]()TEST()%f[%W]', group = 'MiniHipatternsNote' },
+        doc = { pattern = '%f[%w]()DOC()%f[%W]', group = 'MiniHipatternsNote' },
+        repo = { pattern = '%f[%w]()REPO()%f[%W]', group = 'MiniHipatternsHack' },
 
-          -- Here's a hex color #00CC00 and maybe even another here #B4D455
-          hex_color = require('mini.hipatterns').gen_highlighter.hex_color(),
-        }
-      }
-    )
+        -- Here's a hex color #00CC00 and maybe even another here #B4D455
+        hex_color = require('mini.hipatterns').gen_highlighter.hex_color(),
+      },
+    }
 
     -- Icons: Glyphs and icons for other plugins to take advantage of
     require('mini.icons').setup()
+
+    -- IndentScope: Adds visual indent scope indicator
+    require('mini.indentscope').setup()
 
     -- Jump: Better f/t jumping, repeat with ;
     require('mini.jump').setup()

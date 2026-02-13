@@ -31,7 +31,7 @@ return {
   -- TS Autotag: Automatically close and rename paired HTML tags
   {
     'windwp/nvim-ts-autotag',
-    lazy = false,
+    event = 'InsertEnter',
     config = true,
   },
 }

@@ -10,35 +10,46 @@ return {
   -- Telescope: Fuzzy-finder for many a thing
   -- https://github.com/nvim-telescope/telescope.nvim
   'nvim-telescope/telescope.nvim',
-  tag = '0.1.8',
+  version = '*',
   dependencies = {
     'nvim-lua/plenary.nvim',
   },
 
-  config = function()
-    require('telescope').setup {
-      pickers = {
-        spell_suggest = {
-          layout_strategy = "cursor",
-          layout_config = {
-              width = 0.33,
-              height = 15,
-          }
-        }
-      }
-    }
-    local builtin = require 'telescope.builtin'
-    local wk = require 'which-key'
-
-    wk.add({
-      {
-        mode = { "n" },
-
-          { "<leader>ff", builtin.find_files, desc = "Find Files in CWD" },
-          { "<leader>fb", builtin.current_buffer_fuzzy_find, desc = "Find in Buffer" },
-          { "<leader>fr", builtin.registers, desc = "Find in Registers" },
-          { "<leader>fs", builtin.spell_suggest, desc = "Find Spell Suggestions" }
-      }
-    })
-  end,
+  keys = {
+    {
+      '<leader>fb',
+      function()
+        require('telescope.builtin').current_buffer_fuzzy_find()
+      end,
+      desc = 'Find in Buffer',
+    },
+    {
+      '<leader>ff',
+      function()
+        require('telescope.builtin').find_files()
+      end,
+      desc = 'Find Files',
+    },
+    {
+      '<leader>fg',
+      function()
+        require('telescope.builtin').live_grep()
+      end,
+      desc = 'Find String in Files',
+    },
+    {
+      '<leader>fr',
+      function()
+        require('telescope.builtin').lsp_references()
+      end,
+      desc = 'Find References',
+    },
+    {
+      '<leader>fs',
+      function()
+        require('telescope.builtin').lsp_document_symbols()
+      end,
+      desc = 'Find Symbols',
+    },
+  },
 }

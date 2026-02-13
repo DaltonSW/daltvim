@@ -6,11 +6,7 @@ require 'config.options'
 
 require 'config.keymaps'
 
-require 'config.lazy'  -- Init Lazy.nvim and load plugins. Should be done after setting leader
-
-require 'config.after' -- Do config stuff required after plugins are loaded
-
-require 'config.whichkey-groups'
+require 'config.lazy' -- Init Lazy.nvim and load plugins. Should be done after setting leader
 
 require 'config.godot' -- LSP setup and pipe connections for Godot External Editor
 
