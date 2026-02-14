@@ -4,7 +4,7 @@
 -- Plugins:
 --   Telescope (nvim-telescope/telescope.nvim) - Extensible fuzzy finder
 --
--- Keymaps: <leader>ff files, <leader>fb buffer, <leader>fr registers, <leader>fs spell
+-- Keymaps: <leader>ff files, <leader>fb buffer, <leader>fr references, <leader>fs symbols
 ---
 return {
   -- Telescope: Fuzzy-finder for many a thing

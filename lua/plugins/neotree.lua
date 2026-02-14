@@ -19,17 +19,20 @@ return {
 
   keys = {
     { '<leader>nc', '<cmd>Neotree close<cr>', desc = 'Neotree Close' },
-    { '<leader>ng', '<cmd>Neotree reveal git_status<cr>', desc = 'Neotree Git Status' },
     { '<leader>nf', '<cmd>Neotree reveal filesystem<cr>', desc = 'Neotree Files' },
+    { '<leader>ng', '<cmd>Neotree reveal git_status<cr>', desc = 'Neotree Git Status' },
     { '<leader>ns', '<cmd>Neotree reveal document_symbols<cr>', desc = 'Neotree Symbols' },
   },
 
   opts = {
+    hide_root_node = true,
+    retain_hidden_root_indent = true,
     close_if_last_window = true,
 
     popup_border_style = 'rounded',
 
     filesystem = {
+      show_hidden_count = false,
       hijack_netrw_behavior = 'open_default',
     },
 
@@ -57,6 +60,15 @@ return {
       'document_symbols',
     },
 
-    nesting_rules = {},
+    nesting_rules = {
+      ['uid'] = {
+        pattern = '(.+)',
+        files = { '%1.uid' },
+      },
+      ['import'] = {
+        pattern = '(.+)',
+        files = { '%1.import' },
+      },
+    },
   },
 }
