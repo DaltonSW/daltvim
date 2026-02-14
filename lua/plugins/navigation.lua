@@ -5,12 +5,14 @@
 --   Telescope (nvim-telescope/telescope.nvim) - Extensible fuzzy finder
 --   Neo-tree (nvim-neo-tree/neo-tree.nvim) - Tree file/git/symbol browser
 --   Trouble (folke/trouble.nvim) - Enhanced list viewer for diagnostics and more
+--   Todo Comments (folke/todo-comments.nvim) - Highlight and list TODO-style keywords
 --
 -- Keymaps:
 --   Telescope: <leader>ff files, <leader>fb buffer, <leader>fg grep,
 --              <leader>fr references, <leader>fs symbols
 --   Neo-tree:  <leader>nc close, <leader>nf files, <leader>ng git, <leader>ns symbols
---   Trouble:   <leader>xx diagnostics, <leader>xl location list, <leader>xq quickfix
+--   Trouble:   <leader>xx diagnostics, <leader>xl location list, <leader>xq quickfix,
+--              <leader>xt TODOs
 ---
 return {
   -- Telescope: Fuzzy-finder for many a thing
@@ -21,6 +23,7 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim',
     },
+    cmd = 'Telescope',
 
     keys = {
       {
@@ -57,6 +60,21 @@ return {
           require('telescope.builtin').lsp_document_symbols()
         end,
         desc = 'Find Symbols',
+      },
+      {
+        '<leader>ft',
+        '<cmd>TodoTelescope<cr>',
+        desc = 'Find TODOs',
+      },
+    },
+
+    defaults = {
+      file_ignore_patterns = {
+        '.git/',
+        '.godot/',
+        '*.tscn',
+        '*.import',
+        '*.uid',
       },
     },
   },
@@ -130,27 +148,23 @@ return {
     },
   },
 
-  -- Trouble: Pretty diagnostic, quickfix, and location list viewer
-  -- https://github.com/folke/trouble.nvim
+  -- Todo Comments: Highlight and search TODO-style keywords with icons
+  -- https://github.com/folke/todo-comments.nvim
   {
-    'folke/trouble.nvim',
-    opts = {},
-    cmd = 'Trouble',
-    keys = {
-      {
-        '<leader>xx',
-        '<cmd>Trouble diagnostics toggle<cr>',
-        desc = 'Diagnostics (Trouble)',
-      },
-      {
-        '<leader>xl',
-        '<cmd>Trouble loclist toggle<cr>',
-        desc = 'Location List (Trouble)',
-      },
-      {
-        '<leader>xq',
-        '<cmd>Trouble qflist toggle<cr>',
-        desc = 'Quickfix List (Trouble)',
+    'folke/todo-comments.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    event = 'VimEnter',
+    opts = {
+      keywords = {
+        TODO = { icon = ' ', color = 'info' },
+        TASK = { icon = ' ', color = 'info' },
+        NOTE = { icon = ' ', color = 'hint', alt = { 'INFO' } },
+        TEST = { icon = '⏲ ', color = 'test' },
+        DOC = { icon = ' ', color = 'hint' },
+        FIX = { icon = ' ', color = 'error', alt = { 'FIXME', 'BUG', 'ISSUE' } },
+        WARN = { icon = ' ', color = 'warning' },
+        HACK = { icon = ' ', color = 'warning', alt = { 'REPO' } },
+        PERF = { icon = ' ', color = 'warning' },
       },
     },
   },
