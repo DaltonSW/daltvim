@@ -34,6 +34,13 @@ return {
         desc = 'Find in Buffer',
       },
       {
+        '<leader>fd',
+        function()
+          require('telescope.builtin').diagnostics()
+        end,
+        desc = 'Find Diagnostics',
+      },
+      {
         '<leader>ff',
         function()
           require('telescope.builtin').find_files()
@@ -100,8 +107,6 @@ return {
     },
 
     opts = {
-      hide_root_node = true,
-      retain_hidden_root_indent = true,
       close_if_last_window = true,
 
       popup_border_style = 'rounded',
