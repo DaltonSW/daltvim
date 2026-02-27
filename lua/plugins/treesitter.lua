@@ -1,5 +1,8 @@
 ---
 -- Treesitter: Incremental parsing for syntax highlighting, indentation, and text objects
+--      Treesitter does NOT handle any LSP things and strictly goes off of text contents
+--      Kinda like a super-duper regex matcher. LSPs can also send highlighting information
+--      that might be more accurate than Treesitter, so neovim will combine the most specific
 --
 -- Plugins:
 --   Treesitter (nvim-treesitter/nvim-treesitter) - Code parsing and highlighting engine

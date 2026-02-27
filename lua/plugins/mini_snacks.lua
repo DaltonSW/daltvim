@@ -1,15 +1,3 @@
----
--- Mini: Collection of small standalone plugins
---
--- Modules enabled:
---   mini.icons - Glyph/icon provider for other plugins
---   mini.jump - Enhanced f/t motions with ; repeat
---   mini.jump2d - Jump to any visible location (default: <CR>)
---   mini.move - Move lines/selections with <C-M-hjkl>
---   mini.pairs - Auto-pair brackets, quotes, parentheses
---   mini.statusline - Lightweight statusline
---   mini.surround - Add/delete/replace surrounding pairs (sa, sd, sr)
----
 return {
   {
     -- Mini: Collection of standalone plugins under the "Mini" umbrella
@@ -58,16 +46,38 @@ return {
   },
 
   {
-    {
-      'folke/snacks.nvim',
-      priority = 1000,
-      lazy = false,
-      opts = {
-        bigfile = { enabled = true }, -- I don't work with bigfiles much but in case I ever do...?
-        -- dashboard = { enabled = true }, -- TODO: Enable and configure
-        image = { enabled = true },
-        quickfile = { enabled = true },
+    'folke/snacks.nvim',
+    priority = 1000,
+    lazy = false,
+    opts = {
+      dashboard = {
+        enabled = true,
+        preset = {
+
+          header = [[
+      ⠀⠀⠀⠀⠀⠀⠀⠀⣰⣧⣼⣧⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣭⣭⣤⣄⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣷⣤⣤⡄
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⡿⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣼⣿⣮⣍⣉⣉⣀⣀⠀⠀⠀
+⠀⠀⣠⣶⣶⣶⣶⣶⣶⣶⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀
+⣴⣿⣿⣿⣿⣿⣯⡛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀
+⠉⣿⣿⣿⣿⣿⣿⣷⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀
+⠀⣿⣿⣿⣿⣿⣿⡟⠸⠿⠿⠿⣿⣿⣿⣿⣿⣿⣿⠿⠋⠀⠀⠀
+⠀⠘⢿⣿⣿⠿⠋⠀⠀⠀⠀⠀⠀⠉⠉⣿⣿⡏⠁⠀⠀⠀⠀⠀
+⠀⠀⢸⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀
+]],
+        },
+        sections = {
+          { section = 'header' },
+          { title = 'Shortcuts', section = 'keys', padding = 1 },
+          { title = 'Recent Files', section = 'recent_files', indent = 2, padding = 1 },
+          { title = 'Projects', section = 'projects', indent = 2, padding = 1 },
+          { section = 'startup' },
+        },
       },
+      image = { enabled = true },
+      quickfile = { enabled = true },
     },
   },
 }
