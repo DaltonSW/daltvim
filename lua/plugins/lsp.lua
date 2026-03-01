@@ -7,7 +7,8 @@
 --   nvim-cmp (hrsh7th/nvim-cmp) - Completion engine
 --   cmp-nvim-lsp (hrsh7th/cmp-nvim-lsp) - LSP source for nvim-cmp
 --
--- Keymaps: gd definition, gD declaration, go type def, gs signature, F2 rename, F3 format, F4 code action
+-- Keymaps: gd definition, gD declaration, go type def, gs signature, F2 rename, F3 format
+-- Uses Telescope builtins for definition, declaration, and type_definition pickers.
 -- NOTE: Neovim 0.11 provides native LSP mappings for:
 --   K (hover), grn (rename), grr (references), gra (code action),
 --   gri (implementation), gO (document symbols)
@@ -49,15 +50,14 @@ return {
         callback = function(event)
           local kopts = { buffer = event.buf }
 
-          vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', kopts)
-          vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', kopts)
-          vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', kopts)
+          vim.keymap.set('n', 'gd', function() require('telescope.builtin').lsp_definitions() end, kopts)
+          vim.keymap.set('n', 'gD', function() require('telescope.builtin').lsp_declarations() end, kopts)
+          vim.keymap.set('n', 'go', function() require('telescope.builtin').lsp_type_definitions() end, kopts)
           vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', kopts)
           vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', kopts)
           vim.keymap.set({ 'n', 'x' }, '<F3>', function()
             vim.lsp.buf.format { async = true }
           end, kopts)
-          vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', kopts)
         end,
       })
     end,
