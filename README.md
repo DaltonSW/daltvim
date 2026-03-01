@@ -6,33 +6,33 @@
 
 | Plugin | Description | Config File |
 | - | - | - |
-| [Catppuccin](https://github.com/catppuccin/nvim) | Pastel color theme with integrations for many plugins | `plugins/colors.lua` |
-| [Conform](https://github.com/stevearc/conform.nvim) | Automatic formatting on save, with per-language formatter configuration | `plugins/formatting.lua` |
-| [Dashboard](https://github.com/nvimdev/dashboard-nvim) | Startup screen with shortcuts to common actions | `plugins/dashboard.lua` |
-| [Floating Help](https://github.com/nil70n/floating-help) | Opens `:help` windows as floating popups instead of splits | `plugins/float-help.lua` |
+| [Catppuccin](https://github.com/catppuccin/nvim) | Pastel color theme with integrations for many plugins | `plugins/ui.lua` |
+| [Conform](https://github.com/stevearc/conform.nvim) | Automatic formatting on save, with per-language formatter configuration | `plugins/editor.lua` |
+| [Floating Help](https://github.com/nil70n/floating-help) | Opens `:help` windows as floating popups instead of splits | `plugins/ui.lua` |
 | [Mason](https://github.com/mason-org/mason.nvim) | Package manager for LSP servers, formatters, linters, and DAP servers | `plugins/lsp.lua` |
 | [Mason-LSPConfig](https://github.com/mason-org/mason-lspconfig.nvim) | Bridges Mason and nvim-lspconfig for automatic LSP server setup | `plugins/lsp.lua` |
-| [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim) | Tree-based browser for files, git status, and document symbols | `plugins/neotree.lua` |
-| [Noice](https://github.com/folke/noice.nvim) | Replaces the command line, messages, and popupmenu with modern UI | `plugins/noice.lua` |
+| [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim) | Tree-based browser for files, git status, and document symbols | `plugins/navigation.lua` |
+| [Noice](https://github.com/folke/noice.nvim) | Replaces the command line, messages, and popupmenu with modern UI | `plugins/ui.lua` |
 | [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) | Auto-completion engine with LSP integration | `plugins/lsp.lua` |
-| [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) | Automatically close and rename paired HTML/JSX tags | `plugins/formatting.lua` |
-| [Render Markdown](https://github.com/MeanderingProgrammer/render-markdown.nvim) | Pretty inline rendering of markdown with headers, lists, and code blocks | `plugins/languages.lua` |
-| [Telescope](https://github.com/nvim-telescope/telescope.nvim) | Fuzzy finder for files, buffers, registers, spell suggestions, and more | `plugins/telescope.lua` |
-| [ToggleTerm](https://github.com/akinsho/toggleterm.nvim) | Floating terminal and lazygit integration | `plugins/toggleterm.lua` |
+| [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) | Automatically close and rename paired HTML/JSX tags | `plugins/editor.lua` |
+| [Render Markdown](https://github.com/MeanderingProgrammer/render-markdown.nvim) | Pretty inline rendering of markdown with headers, lists, and code blocks | `plugins/editor.lua` |
+| [Snacks](https://github.com/folke/snacks.nvim) | Dashboard, image viewer, and quickfile opener | `plugins/mini_snacks.lua` |
+| [Telescope](https://github.com/nvim-telescope/telescope.nvim) | Fuzzy finder for files, buffers, grep, references, symbols, and more | `plugins/navigation.lua` |
+| [ToggleTerm](https://github.com/akinsho/toggleterm.nvim) | Floating terminal toggled with a keymap | `plugins/editor.lua` |
+| [Todo Comments](https://github.com/folke/todo-comments.nvim) | Highlight and list TODO-style keywords in comments | `plugins/navigation.lua` |
 | [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | Incremental parsing for syntax highlighting, indentation, and text objects | `plugins/treesitter.lua` |
-| [Trouble](https://github.com/folke/trouble.nvim) | Pretty list viewer for diagnostics, quickfix, and location lists | `plugins/trouble.lua` |
-| [Undotree](https://github.com/jiaoshijie/undotree) | Visual tree-based undo history for branching edits | `plugins/undotree.lua` |
+| [Undotree](https://github.com/jiaoshijie/undotree) | Visual tree-based undo history for branching edits | `plugins/editor.lua` |
 | [Vim Sleuth](https://github.com/tpope/vim-sleuth) | Auto-detects tabstop, shiftwidth, and expandtab from file contents | `plugins/editor.lua` |
-| [Which Key](https://github.com/folke/which-key.nvim) | Shows available keybindings as you type leader/chord sequences | `plugins/whichkey.lua` |
+| [Which Key](https://github.com/folke/which-key.nvim) | Shows available keybindings as you type leader/chord sequences | `plugins/editor.lua` |
 
 ### Mini
 
-[mini.nvim](https://github.com/echasnovski/mini.nvim) is a collection of small, standalone plugins. Config file: `plugins/mini.lua`
+[mini.nvim](https://github.com/echasnovski/mini.nvim) is a collection of small, standalone plugins. Config file: `plugins/mini_snacks.lua`
 
 | Module | Description |
 | - | - |
-| `mini.hipatterns` | Highlight patterns like TODO keywords and inline hex colors |
 | `mini.icons` | Glyph and icon provider used by other plugins (Neo-tree, etc.) |
+| `mini.indentscope` | Visual indent scope indicator |
 | `mini.jump` | Enhanced `f`/`t` motions with repeat via `;` |
 | `mini.jump2d` | Jump to any visible location on screen (default keymap: `<CR>`) |
 | `mini.move` | Move lines or selections directionally without cut/paste (`<C-M-hjkl>`) |
@@ -56,10 +56,9 @@
 
 | Keymap | Mode | Description |
 | - | - | - |
+| `<leader>tt` | n | Toggle floating terminal |
 | `<Esc><Esc>` | t | Toggle terminal window |
 | `<Esc>` | t | Exit terminal mode (return to normal mode) |
-| `<leader>ft` | n | Open floating terminal |
-| `<leader>fg` | n | Open floating lazygit |
 
 ### LSP (active when a language server is attached)
 
@@ -74,17 +73,16 @@ Neovim 0.11+ provides these natively:
 | `gri` | Go to implementation |
 | `gO` | Document symbols |
 
-Custom LSP keymaps (set in `config/after.lua`):
+Custom LSP keymaps (set in `plugins/lsp.lua`):
 
 | Keymap | Description |
 | - | - |
-| `gd` | Go to definition |
-| `gD` | Go to declaration |
-| `go` | Go to type definition |
+| `gd` | Go to definition (Telescope) |
+| `gD` | Go to declaration (Telescope) |
+| `go` | Go to type definition (Telescope) |
 | `gs` | Signature help |
 | `<F2>` | Rename |
 | `<F3>` | Format (async) |
-| `<F4>` | Code action |
 
 ### Completion (nvim-cmp)
 
@@ -101,13 +99,10 @@ Custom LSP keymaps (set in `config/after.lua`):
 
 | Prefix | Group | Key Bindings |
 | - | - | - |
-| `<leader>f` | Find | `ff` files, `fb` buffer, `fr` registers, `fs` spell, `ft` terminal, `fg` git |
+| `<leader>f` | Find | `fb` buffer, `fd` diagnostics, `ff` files, `fg` grep, `fr` references, `fs` symbols, `ft` TODOs |
 | `<leader>n` | Neo-tree | `nc` close, `nf` files, `ng` git status, `ns` symbols |
-| `<leader>s` | Search | (Telescope search group) |
-| `<leader>x` | Trouble | `xx` diagnostics, `xl` location list, `xq` quickfix |
-| `<leader>u` | | Undotree toggle |
-| `<leader>uce` | | Clear Windows line endings |
-| `<leader>d` | | Dashboard |
+| `<leader>t` | Terminal | `tt` toggle floating terminal |
+| `<leader>u` | Utilities | Undotree toggle |
 | `<leader>?` | | Local buffer keymaps (Which Key) |
 
 ### Treesitter
@@ -126,33 +121,25 @@ Custom LSP keymaps (set in `config/after.lua`):
 
 ```
 ~/.config/nvim/
-├── init.lua                     # Entry point: leader keys, load order
+├── init.lua                     # Entry point: leader keys, load order, colorscheme
 ├── lsp/
-│   └── gdscript.lua             # GDScript LSP server config
+│   └── gdscript.lua             # GDScript LSP server config (Neovim 0.11 native)
 ├── lua/
 │   ├── config/
 │   │   ├── options.lua          # Neovim options (numbers, clipboard, etc.)
 │   │   ├── keymaps.lua          # Core keymaps and yank highlight autocmd
-│   │   ├── lazy.lua             # Lazy.nvim bootstrap and plugin loader
-│   │   ├── after.lua            # Post-plugin setup (LSP keymaps, CMP, Godot, etc.)
-│   │   └── whichkey-groups.lua  # Which-key leader group registrations
+│   │   ├── lazynvim.lua         # Lazy.nvim bootstrap and plugin loader
+│   │   └── godot.lua            # Godot LSP enable and pipe server setup
 │   └── plugins/
-│       ├── colors.lua           # Catppuccin theme
-│       ├── dashboard.lua        # Startup dashboard screen
-│       ├── editor.lua           # Vim Sleuth (auto-detect indentation)
-│       ├── float-help.lua       # Floating help windows
-│       ├── formatting.lua       # Conform formatter + ts-autotag
-│       ├── languages.lua        # Render Markdown
-│       ├── lsp.lua              # Mason, Mason-LSPConfig, nvim-cmp
-│       ├── mini.lua             # mini.nvim modules
-│       ├── neotree.lua          # Neo-tree file browser
-│       ├── noice.lua            # Noice UI + nvim-notify
-│       ├── telescope.lua        # Telescope fuzzy finder
-│       ├── toggleterm.lua       # ToggleTerm floating terminal
-│       ├── treesitter.lua       # Treesitter syntax parsing
-│       ├── trouble.lua          # Trouble diagnostics viewer
-│       ├── undotree.lua         # Undo history tree
-│       └── whichkey.lua         # Which Key keymap viewer
+│       ├── dashboard.lua        # Dashboard startup screen (disabled)
+│       ├── editor.lua           # Vim Sleuth, Conform, ts-autotag, Render Markdown, Undotree, ToggleTerm, Which Key
+│       ├── lsp.lua              # Mason, Mason-LSPConfig, nvim-cmp, LSP keymaps
+│       ├── mini_snacks.lua      # mini.nvim modules + Snacks (dashboard, image, quickfile)
+│       ├── navigation.lua       # Telescope, Neo-tree, Todo Comments
+│       ├── treesitter.lua       # Treesitter syntax parsing + VHS/Go template support
+│       └── ui.lua               # Catppuccin theme, Noice, nvim-notify, Floating Help
+├── notes/
+│   └── plugin-template.lua      # Template for new plugin specs
 └── lazy-lock.json               # Plugin version lock file
 ```
 

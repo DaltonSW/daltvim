@@ -4,15 +4,12 @@
 -- Plugins:
 --   Telescope (nvim-telescope/telescope.nvim) - Extensible fuzzy finder
 --   Neo-tree (nvim-neo-tree/neo-tree.nvim) - Tree file/git/symbol browser
---   Trouble (folke/trouble.nvim) - Enhanced list viewer for diagnostics and more
 --   Todo Comments (folke/todo-comments.nvim) - Highlight and list TODO-style keywords
 --
 -- Keymaps:
---   Telescope: <leader>ff files, <leader>fb buffer, <leader>fg grep,
---              <leader>fr references, <leader>fs symbols
+--   Telescope: <leader>fb buffer, <leader>fd diagnostics, <leader>ff files,
+--              <leader>fg grep, <leader>fr references, <leader>fs symbols, <leader>ft TODOs
 --   Neo-tree:  <leader>nc close, <leader>nf files, <leader>ng git, <leader>ns symbols
---   Trouble:   <leader>xx diagnostics, <leader>xl location list, <leader>xq quickfix,
---              <leader>xt TODOs
 ---
 return {
   -- Telescope: Fuzzy-finder for many a thing

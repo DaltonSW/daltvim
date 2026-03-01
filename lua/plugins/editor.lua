@@ -7,9 +7,10 @@
 --   nvim-ts-autotag (windwp/nvim-ts-autotag) - Auto-close and rename paired HTML/JSX tags
 --   Render Markdown (MeanderingProgrammer/render-markdown.nvim) - Pretty inline markdown rendering
 --   Undotree (jiaoshijie/undotree) - Tree-style undo history browser
+--   ToggleTerm (akinsho/toggleterm.nvim) - Floating terminal toggled with a keymap
 --   Which Key (folke/which-key.nvim) - Shows available keybindings as you type
 --
--- Keymaps: <leader>u undotree, <leader>? local buffer keymaps
+-- Keymaps: <leader>u undotree, <leader>tt terminal, <leader>? local buffer keymaps
 ---
 return {
   {
@@ -67,6 +68,24 @@ return {
     },
   },
 
+  -- ToggleTerm: Floating terminal
+  {
+    'akinsho/toggleterm.nvim',
+    version = '*',
+    keys = {
+      {
+        '<leader>tt',
+        function()
+          require('toggleterm').toggle(0, nil, nil, 'float')
+        end,
+        desc = 'Toggle Terminal',
+      },
+    },
+    opts = {
+      direction = 'float',
+    },
+  },
+
   -- Which-Key: Show keymappings based on your current chords
   {
     'folke/which-key.nvim',
@@ -78,7 +97,7 @@ return {
         { '<leader>n', group = 'Neotree' },
         { '<leader>s', group = 'Search' },
         { '<leader>u', group = 'Utilities' },
-        { '<leader>x', group = 'Trouble' },
+        { '<leader>t', group = 'Terminal' },
       },
     },
     keys = {
