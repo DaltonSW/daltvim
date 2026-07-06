@@ -23,6 +23,7 @@ local ensure_installed = {
   'gdshader',
   'go',
   'godot_resource',
+  'gotmpl',
   'html',
   'json',
   'lua',
@@ -66,6 +67,10 @@ return {
       register_vhs()
       vim.treesitter.language.register('vhs', { 'tape' })
       vim.api.nvim_create_autocmd('User', { pattern = 'TSUpdate', callback = register_vhs })
+
+      -- Go HTML templates parse as plain `html`; the `gotmpl` grammar is injected
+      -- into `{{ }}` regions separately (see after/queries/html/injections.scm)
+      vim.treesitter.language.register('html', { 'gohtmltmpl' })
 
       -- install() is a no-op for parsers that are already installed
       require('nvim-treesitter').install(ensure_installed)
