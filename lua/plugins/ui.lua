@@ -3,6 +3,7 @@
 --
 -- Plugins:
 --   Catppuccin (catppuccin/nvim) - Pastel color theme with plugin integrations
+--   Highlight Colors (brenoprata10/nvim-highlight-colors) - Renders color values inline
 --   Noice (folke/noice.nvim) - Replaces messages, cmdline, and popupmenu
 --   nvim-notify (rcarriga/nvim-notify) - Notification backend (dependency)
 --   nui.nvim (MunifTanjim/nui.nvim) - UI component library (dependency)
@@ -36,6 +37,21 @@ return {
         which_key = true,
       },
     },
+  },
+
+  -- Highlight Colors: Adds colors to hex codes, HSL codes, CSS variables, etc
+  -- Repo: https://github.com/brenoprata10/nvim-highlight-colors
+  {
+    'brenoprata10/nvim-highlight-colors',
+    lazy = false,
+    cmd = 'HighlightColors',
+    config = function()
+      require('nvim-highlight-colors').setup {
+        render = 'virtual',
+        virtual_symbol_position = 'eow',
+        enable_short_hex = false,
+      }
+    end,
   },
 
   -- Noice: Replaces messages, cmdline, and popup menu

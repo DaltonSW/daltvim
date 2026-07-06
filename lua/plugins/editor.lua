@@ -36,6 +36,9 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
         go = { 'goimports' },
+        typescript = { 'prettier' },
+        typescriptreact = { 'prettier' },
+        html = { 'prettier' },
       },
     },
   },
