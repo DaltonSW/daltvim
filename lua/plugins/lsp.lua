@@ -7,12 +7,15 @@
 --   nvim-cmp (hrsh7th/nvim-cmp) - Completion engine
 --   cmp-nvim-lsp (hrsh7th/cmp-nvim-lsp) - LSP source for nvim-cmp
 --
--- Keymaps: gd definition, gD declaration, go type def, gs signature, F2 rename, F3 format
--- Uses Telescope builtins for definition, declaration, and type_definition pickers.
+-- Keymaps: gd definition, gD declaration, gr references, gI implementation,
+--          gy type def, gs signature, F2 rename, F3 format
+-- Uses Snacks.picker (folke/snacks.nvim) for definition/declaration/references/
+-- implementation/type_definition pickers.
 -- NOTE: Neovim 0.11 provides native LSP mappings for:
 --   K (hover), grn (rename), grr (references), gra (code action),
 --   gri (implementation), gO (document symbols)
--- Only non-default bindings are set here.
+-- gr/gI intentionally override the native grr/gri with picker-backed
+-- equivalents (richer UI: fuzzy list + preview) instead of jumping/quickfix.
 ---
 return {
   -- Mason: Package manager for LSPs, DAP servers, linters, and formatters
@@ -50,9 +53,11 @@ return {
         callback = function(event)
           local kopts = { buffer = event.buf }
 
-          vim.keymap.set('n', 'gd', function() require('telescope.builtin').lsp_definitions() end, kopts)
-          vim.keymap.set('n', 'gD', function() require('telescope.builtin').lsp_declarations() end, kopts)
-          vim.keymap.set('n', 'go', function() require('telescope.builtin').lsp_type_definitions() end, kopts)
+          vim.keymap.set('n', 'gd', function() Snacks.picker.lsp_definitions() end, kopts)
+          vim.keymap.set('n', 'gD', function() Snacks.picker.lsp_declarations() end, kopts)
+          vim.keymap.set('n', 'gr', function() Snacks.picker.lsp_references() end, kopts)
+          vim.keymap.set('n', 'gI', function() Snacks.picker.lsp_implementations() end, kopts)
+          vim.keymap.set('n', 'gy', function() Snacks.picker.lsp_type_definitions() end, kopts)
           vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', kopts)
           vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', kopts)
           vim.keymap.set({ 'n', 'x' }, '<F3>', function()

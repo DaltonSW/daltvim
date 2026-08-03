@@ -9,7 +9,8 @@ end
 vim.opt.hlsearch = true
 map('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlight' })
 
-map('t', '<Esc><Esc>', '<cmd>ToggleTerm<cr>', { desc = 'Toggle terminal' })
+map('t', '<c-/>', '<cmd>close<cr>', { desc = 'Hide Terminal' })
+map('t', '<c-_>', '<cmd>close<cr>', { desc = 'which_key_ignore' })
 map('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 --  Use CTRL+<hjkl> to switch between split windows - See `:help wincmd` for a list of all window commands

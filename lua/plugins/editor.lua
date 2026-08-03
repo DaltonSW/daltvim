@@ -6,11 +6,9 @@
 --   Conform (stevearc/conform.nvim) - Format-on-save with per-language formatters
 --   nvim-ts-autotag (windwp/nvim-ts-autotag) - Auto-close and rename paired HTML/JSX tags
 --   Render Markdown (MeanderingProgrammer/render-markdown.nvim) - Pretty inline markdown rendering
---   Undotree (jiaoshijie/undotree) - Tree-style undo history browser
---   ToggleTerm (akinsho/toggleterm.nvim) - Floating terminal toggled with a keymap
 --   Which Key (folke/which-key.nvim) - Shows available keybindings as you type
 --
--- Keymaps: <leader>u undotree, <leader>tt terminal, <leader>? local buffer keymaps
+-- Keymaps: <leader>? local buffer keymaps
 ---
 return {
   {
@@ -61,34 +59,6 @@ return {
     opts = {},
   },
 
-  -- Undotree: Tree-like undo history
-  {
-    'jiaoshijie/undotree',
-    dependencies = 'nvim-lua/plenary.nvim',
-    config = true,
-    keys = {
-      { '<leader>u', "<cmd>lua require('undotree').toggle()<cr>", desc = 'Undotree' },
-    },
-  },
-
-  -- ToggleTerm: Floating terminal
-  {
-    'akinsho/toggleterm.nvim',
-    version = '*',
-    keys = {
-      {
-        '<leader>tt',
-        function()
-          require('toggleterm').toggle(0, nil, nil, 'float')
-        end,
-        desc = 'Toggle Terminal',
-      },
-    },
-    opts = {
-      direction = 'float',
-    },
-  },
-
   -- Which-Key: Show keymappings based on your current chords
   {
     'folke/which-key.nvim',
@@ -97,10 +67,8 @@ return {
       preset = 'helix',
       spec = {
         { '<leader>f', group = 'Find' },
-        { '<leader>n', group = 'Neotree' },
+        { '<leader>g', group = 'Git' },
         { '<leader>s', group = 'Search' },
-        { '<leader>u', group = 'Utilities' },
-        { '<leader>t', group = 'Terminal' },
       },
     },
     keys = {
