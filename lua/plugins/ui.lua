@@ -23,7 +23,6 @@ return {
       integrations = {
         cmp = true,
         dashboard = true,
-        lsp_trouble = true,
         mason = true,
         mini = {
           enabled = true,
@@ -44,7 +43,6 @@ return {
   {
     'brenoprata10/nvim-highlight-colors',
     lazy = false,
-    cmd = 'HighlightColors',
     config = function()
       require('nvim-highlight-colors').setup {
         render = 'virtual',

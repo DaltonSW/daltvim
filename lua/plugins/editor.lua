@@ -55,7 +55,7 @@ return {
     'MeanderingProgrammer/render-markdown.nvim',
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
-      'mini-nvim/mini.nvim',
+      'nvim-mini/mini.nvim',
     },
     ft = 'markdown',
     opts = {},

@@ -27,7 +27,7 @@
 
 ### Mini
 
-[mini.nvim](https://github.com/echasnovski/mini.nvim) is a collection of small, standalone plugins. Config file: `plugins/mini_snacks.lua`
+[mini.nvim](https://github.com/nvim-mini/mini.nvim) is a collection of small, standalone plugins. Config file: `plugins/mini_snacks.lua`
 
 | Module | Description |
 | - | - |
@@ -131,7 +131,6 @@ Custom LSP keymaps (set in `plugins/lsp.lua`):
 │   │   ├── lazynvim.lua         # Lazy.nvim bootstrap and plugin loader
 │   │   └── godot.lua            # Godot LSP enable and pipe server setup
 │   └── plugins/
-│       ├── dashboard.lua        # Dashboard startup screen (disabled)
 │       ├── editor.lua           # Vim Sleuth, Conform, ts-autotag, Render Markdown, Undotree, ToggleTerm, Which Key
 │       ├── lsp.lua              # Mason, Mason-LSPConfig, nvim-cmp, LSP keymaps
 │       ├── mini_snacks.lua      # mini.nvim modules + Snacks (dashboard, image, quickfile)

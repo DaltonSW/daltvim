@@ -7,6 +7,8 @@ return {
     config = function()
       -- Icons: Glyphs and icons for other plugins to take advantage of
       require('mini.icons').setup()
+      -- Shim nvim-web-devicons so plugins that depend on it (e.g. neo-tree) use mini.icons instead
+      MiniIcons.mock_nvim_web_devicons()
 
       -- IndentScope: Adds visual indent scope indicator
       require('mini.indentscope').setup()
