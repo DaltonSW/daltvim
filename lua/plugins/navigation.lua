@@ -16,15 +16,13 @@ return {
     event = 'VimEnter',
     opts = {
       keywords = {
-        TODO = { icon = ' ', color = 'info' },
-        TASK = { icon = ' ', color = 'info' },
-        NOTE = { icon = ' ', color = 'hint', alt = { 'INFO' } },
-        TEST = { icon = '⏲ ', color = 'test' },
-        DOC = { icon = ' ', color = 'hint' },
-        FIX = { icon = ' ', color = 'error', alt = { 'FIXME', 'BUG', 'ISSUE' } },
-        WARN = { icon = ' ', color = 'warning' },
-        HACK = { icon = ' ', color = 'warning', alt = { 'REPO' } },
-        PERF = { icon = ' ', color = 'warning' },
+        TODO = { icon = '󰄲', color = 'info', alt = { 'TASK' } },
+        NOTE = { icon = '󰎞', color = 'hint', alt = { 'INFO', 'REPO', 'DOC' } },
+        TEST = { icon = '󰙨 ', color = 'test' },
+        FIX = { icon = '󱌣', color = 'error', alt = { 'FIXME', 'BUG', 'ISSUE', 'ERROR' } },
+        WARN = { icon = '󰈸', color = 'warning', alt = { 'HACK' } },
+        WHAT = { icon = '', color = 'warning', alt = { 'WHAT' } },
+        REGION = { icon = '󰍎', color = 'test' }
       },
     },
   },
