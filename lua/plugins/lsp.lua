@@ -32,8 +32,8 @@ return {
       library = {
         { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
         -- Plugins that install themselves as globals rather than modules
-        { path = 'snacks.nvim', words = { 'Snacks' } },
-        { path = 'mini.nvim', words = { 'Mini%w+' } },
+        { path = 'snacks.nvim',        words = { 'Snacks' } },
+        { path = 'mini.nvim',          words = { 'Mini%w+' } },
       },
     },
   },
@@ -43,7 +43,7 @@ return {
     'mason-org/mason-lspconfig.nvim',
     dependencies = { 'neovim/nvim-lspconfig' },
     opts = {
-      ensure_installed = { 'lua_ls', 'gopls', 'ts_ls', 'pyright' },
+      ensure_installed = { 'lua_ls', 'gopls', 'ts_ls', 'pyright', 'clangd' },
     },
     config = function(_, opts)
       require('mason-lspconfig').setup(opts)

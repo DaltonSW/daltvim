@@ -18,6 +18,8 @@
 ---
 local ensure_installed = {
   'bash',
+  'c',
+  'cpp',
   'diff',
   'gdscript',
   'gdshader',
