@@ -135,6 +135,18 @@ return {
         end,
         desc = 'File Explorer',
       },
+      {
+        '<c-n>',
+        function()
+          local explorer = Snacks.picker.get({ source = 'explorer' })[1]
+          if explorer then
+            explorer:close()
+          else
+            Snacks.explorer()
+          end
+        end,
+        desc = 'Toggle File Explorer',
+      },
 
       -- find
       {
