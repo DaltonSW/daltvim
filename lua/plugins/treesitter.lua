@@ -21,6 +21,7 @@ local ensure_installed = {
   'c',
   'cpp',
   'diff',
+  'doxygen',
   'gdscript',
   'gdshader',
   'go',
