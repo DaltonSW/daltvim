@@ -34,9 +34,16 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
         go = { 'goimports' },
+        javascript = { 'prettier' },
         typescript = { 'prettier' },
         typescriptreact = { 'prettier' },
+        svelte = { 'prettier' },
+        css = { 'prettier' },
         html = { 'prettier' },
+        json = { 'prettier' },
+        jsonc = { 'prettier' },
+        yaml = { 'prettier' },
+        markdown = { 'prettier' },
       },
     },
   },
@@ -66,6 +73,7 @@ return {
     opts = {
       preset = 'helix',
       spec = {
+        { '<leader>c', group = 'Code' },
         { '<leader>f', group = 'Find' },
         { '<leader>g', group = 'Git' },
         { '<leader>s', group = 'Search' },

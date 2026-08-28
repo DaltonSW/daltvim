@@ -43,7 +43,7 @@ return {
     'mason-org/mason-lspconfig.nvim',
     dependencies = { 'neovim/nvim-lspconfig' },
     opts = {
-      ensure_installed = { 'lua_ls', 'gopls', 'ts_ls', 'pyright', 'clangd' },
+      ensure_installed = { 'lua_ls', 'gopls', 'ts_ls', 'pyright', 'clangd', 'svelte', 'eslint' },
     },
     config = function(_, opts)
       require('mason-lspconfig').setup(opts)
@@ -54,6 +54,8 @@ return {
 
       vim.diagnostic.config {
         virtual_text = true,
+        severity_sort = true,
+        float = { border = 'rounded', source = true },
       }
 
       -- LspAttach keymaps
@@ -72,6 +74,20 @@ return {
           vim.keymap.set({ 'n', 'x' }, '<F3>', function()
             vim.lsp.buf.format { async = true }
           end, kopts)
+
+          -- Code actions (native `gra` still works for the full menu)
+          local function ckey(lhs, fn, desc)
+            vim.keymap.set('n', lhs, fn, vim.tbl_extend('force', kopts, { desc = desc }))
+          end
+          ckey('<leader>ca', vim.lsp.buf.code_action, 'Code action')
+          ckey('<leader>co', function()
+            vim.lsp.buf.code_action { context = { only = { 'source.organizeImports' } }, apply = true }
+          end, 'Organize imports')
+          ckey('<leader>cf', function()
+            -- Covers tsserver's fixable diagnostics and the ESLint LSP
+            -- (source.fixAll.eslint). ESLint also registers :LspEslintFixAll.
+            vim.lsp.buf.code_action { context = { only = { 'source.fixAll' } }, apply = true }
+          end, 'Fix all (LSP / ESLint)')
         end,
       })
     end,
