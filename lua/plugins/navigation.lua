@@ -27,7 +27,7 @@ return {
         -- Doxygen tags (@note/@warning/@todo reuse the groups above)
         brief = { icon = '󰈙', color = 'hint' },
         param = { icon = '󰘦', color = 'default' },
-        ['return'] = { icon = '󰌑', color = 'default', alt = { 'retval' } },
+        ['return'] = { icon = '󰌑', color = 'default', alt = { 'retval', 'returns' } },
         throws = { icon = '󰢃', color = 'error', alt = { 'exception' } },
         see = { icon = '󰗀', color = 'hint', alt = { 'sa' } },
         deprecated = { icon = '󰗼', color = 'warning' },
